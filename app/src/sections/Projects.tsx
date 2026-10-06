@@ -140,7 +140,7 @@ export default function Projects() {
               {/* Image */}
               <div className="relative project-img">
                 <img
-                  src="/project-crm.jpg"
+                  src={`${import.meta.env.BASE_URL}project-crm.jpg`}
                   alt="智能家居CRM平台"
                   className="w-full h-[240px] md:h-[320px] object-cover"
                 />
@@ -254,7 +254,7 @@ export default function Projects() {
               {/* Image - Right */}
               <div className="relative project-img order-1 lg:order-2">
                 <img
-                  src="/project-sfa.jpg"
+                  src={`${import.meta.env.BASE_URL}project-sfa.jpg`}
                   alt="SFA销售自动化模块"
                   className="w-full h-[240px] md:h-[320px] object-cover"
                 />
@@ -273,7 +273,7 @@ export default function Projects() {
               {/* Image */}
               <div className="relative project-img">
                 <img
-                  src="/project-dms.jpg"
+                  src={`${import.meta.env.BASE_URL}project-dms.jpg`}
                   alt="DMS经销商管理系统"
                   className="w-full h-[240px] md:h-[320px] object-cover"
                 />

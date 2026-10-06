@@ -142,7 +142,7 @@ export default function Hero() {
                 查看经历
               </a>
               <a
-                href="/resume-crm.pdf"
+                href={`${import.meta.env.BASE_URL}resume-crm.pdf`}
                 download="向紫彤-产品经理简历.pdf"
                 className="inline-flex items-center gap-2 border border-[rgba(255,255,255,0.2)] text-[#FAF6F1] px-5 py-3 rounded-lg font-medium text-[0.9375rem] hover:border-[rgba(255,255,255,0.4)] hover:scale-[1.02] transition-all duration-200"
               >
@@ -188,7 +188,7 @@ export default function Hero() {
               {/* Portrait image */}
               <div className="relative z-10 rounded-2xl overflow-hidden border-2 border-[rgba(212,167,106,0.2)] max-h-[480px] w-auto">
                 <img
-                  src="/portrait.jpg"
+                  src={`${import.meta.env.BASE_URL}portrait.jpg`}
                   alt="Camellia 职业照"
                   className="w-[280px] md:w-[350px] lg:w-auto h-[350px] md:h-[420px] lg:h-[480px] object-cover"
                 />
