@@ -9,11 +9,11 @@ const skillTags = [
   'CRM系统',
   'DMS经销商管理',
   'SFA销售自动化',
-  '从0到1产品设计',
-  '国际化产品',
-  '智慧养老',
+  '企业数字化',
+  '从0到1',
+  '标准化与国际化',
+  'AI Agent',
   '数据驱动',
-  '项目全生命周期',
 ];
 
 const mbtiTraits = [
@@ -96,11 +96,11 @@ export default function About() {
           <div ref={leftRef}>
             <span className="section-label">关于我 · ABOUT</span>
             <h2 className="text-h2 text-[#2C2825] mt-3">
-              产品驱动，数据说话
+              从业务经营到AI落地
             </h2>
             <div className="w-12 h-[3px] bg-[#B07D4A] mt-4" />
             <p className="text-body text-[#6B6560] mt-6 leading-[1.8]">
-              6年产品经理工作经验，CRM智能家居、快消品行业产品经验。精通模块包括DMS（经销商管理系统）、SFA（销售自动化），核心功能涵盖客户管理、拜访管理、产品管理、价格管理、促销管理、项目管理、订单管理、合同管理等。实现标准化产品设计从0到1，服务客户包括五粮浓香系列酒、天味食品等。智能家居行业自研CRM系统从国内到国际版的产品设计经验，实现企业订单100%线上化和国际版本成功上线。智慧养老行业产品经验，独立负责千万级政府项目产品工作。
+              7年产品经理经验，聚焦CRM、企业数字化、智能家居、快消品和智慧养老，具备B端商业化产品与自研产品的完整实践。主导CRM、DMS、SFA等产品规划与落地，覆盖线索、客户、商机、价格、订单、合同、促销、返利、拜访和售后等核心业务；拥有从0到1、标准化和国际化经验，并完成CRM知识问答Agent从规划到上线。
             </p>
 
             {/* Skill Tags */}
@@ -119,7 +119,7 @@ export default function About() {
               Professional Profile
             </h3>
             <p className="text-[0.9375rem] text-[#6B6560] leading-[1.8] mt-4">
-              Product manager (Camellia) with 6 years of experience specializing in CRM systems, smart home, and FMCG industries. Expert in DMS (Dealer Management System) and SFA (Sales Force Automation) modules. Proven track record of building products from 0 to 1, serving clients including Wuliangye and Teway Food. Successfully led international CRM platform launch with 100% online order digitalization and 300% efficiency improvement. Experienced in smart elderly care industry, independently managing government projects worth over 10 million RMB.
+              Product manager with 7 years of experience across CRM, enterprise digitalization, smart home, FMCG, and smart elderly care. Led CRM, DMS, and SFA products from planning to launch, including standardized and international solutions. Delivered 100% online order management, a 300% increase in order-processing efficiency, and a CRM knowledge Q&amp;A Agent with 90% answer accuracy.
             </p>
 
             {/* MBTI Card */}

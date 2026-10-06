@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { ChevronDown, Phone, Mail, MessageCircle } from 'lucide-react';
+import { ChevronDown, Phone, Mail, MessageCircle, FileDown } from 'lucide-react';
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -38,9 +38,9 @@ export default function Hero() {
   };
 
   const stats = [
-    { number: '6+', label: '年产品经验' },
-    { number: '3', label: '行业深耕' },
-    { number: '100%', label: '订单线上化' },
+    { number: '7', label: '年产品经验' },
+    { number: '300%', label: '订单效率提升' },
+    { number: '90%', label: 'Agent准确率' },
   ];
 
   return (
@@ -95,7 +95,7 @@ export default function Hero() {
               ref={introRef}
               className="opacity-0 translate-y-4 mt-6 text-[1.125rem] text-[#A39C95] leading-[1.7] max-w-lg"
             >
-              6年产品经理经验，专注于CRM系统与B端产品设计，从0到1驱动企业数字化转型
+              7年产品经理经验，聚焦CRM与企业数字化，兼具标准化、国际化与AI产品落地实践
             </p>
 
             {/* Stats */}
@@ -140,6 +140,14 @@ export default function Hero() {
                 className="inline-flex items-center border border-[rgba(255,255,255,0.2)] text-[#FAF6F1] px-7 py-3 rounded-lg font-medium text-[0.9375rem] hover:border-[rgba(255,255,255,0.4)] hover:scale-[1.02] transition-all duration-200"
               >
                 查看经历
+              </a>
+              <a
+                href="/resume-crm.pdf"
+                download="向紫彤-产品经理简历.pdf"
+                className="inline-flex items-center gap-2 border border-[rgba(255,255,255,0.2)] text-[#FAF6F1] px-5 py-3 rounded-lg font-medium text-[0.9375rem] hover:border-[rgba(255,255,255,0.4)] hover:scale-[1.02] transition-all duration-200"
+              >
+                <FileDown size={18} />
+                下载简历
               </a>
 
               {/* Social Icons */}

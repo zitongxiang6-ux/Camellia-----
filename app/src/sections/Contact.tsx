@@ -9,7 +9,7 @@ const contactItems = [
   { icon: Phone, label: '电话', value: '18292879652', href: 'tel:18292879652' },
   { icon: Mail, label: '邮箱', value: '18292879652@163.com', href: 'mailto:18292879652@163.com' },
   { icon: MessageCircle, label: '微信', value: 'Stong18292879652', href: '#' },
-  { icon: MapPin, label: '期望城市', value: '杭州', href: '#' },
+  { icon: MapPin, label: '期望城市', value: '杭州 / 上海', href: '#' },
 ];
 
 export default function Contact() {
@@ -116,7 +116,7 @@ export default function Contact() {
         {/* Footer */}
         <footer className="mt-16 pt-6 border-t border-[#E5DED6]">
           <p className="text-center text-[0.75rem] text-[#A39C95]">
-            © 2024 向紫彤 Zitong Xiang. All rights reserved.
+            © 2026 向紫彤 Zitong Xiang. All rights reserved.
           </p>
           <p className="text-center text-[0.75rem] text-[#A39C95] mt-1">
             Product Manager · 产品驱动价值

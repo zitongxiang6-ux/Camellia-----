@@ -8,19 +8,19 @@ gsap.registerPlugin(ScrollTrigger);
 const skillMatrix = [
   {
     category: 'CRM产品',
-    skills: ['DMS经销商管理', 'SFA销售自动化', '客户管理', '订单管理', '合同管理'],
+    skills: ['线索管理', '客户管理', '商机管理', '价格管理', '订单与合同', '售后管理'],
   },
   {
-    category: '产品管理',
-    skills: ['需求分析', '竞品调研', '原型设计', '数据分析', '用户研究', '产品规划'],
+    category: '标准化产品',
+    skills: ['DMS经销商管理', 'SFA销售自动化', '促销引擎', '返利引擎', '产品国际化'],
   },
   {
-    category: '行业知识',
-    skills: ['智能家居', '快消品', '智慧养老', 'B端产品', '国际化产品'],
+    category: '产品能力',
+    skills: ['产品决策', '业务经营', '跨部门推动', '需求调研', '产品规划', '数据验证'],
   },
   {
-    category: '工具方法',
-    skills: ['Axure', 'Figma', 'SQL', '数据分析', '敏捷开发', 'PMP项目管理'],
+    category: 'AI应用',
+    skills: ['知识问答Agent', '企业知识库', '多轮追问', '原文溯源', 'AI场景判断'],
   },
 ];
 
@@ -124,10 +124,10 @@ export default function Skills() {
             {/* Tools */}
             <div className="mt-8">
               <h4 className="text-[1rem] font-semibold text-[#FAF6F1] mb-3">
-                工具与方法
+                方法与实践
               </h4>
               <p className="text-[0.875rem] text-[#A39C95]">
-                Axure · Figma · JIRA · Confluence · PMP方法论 · 敏捷开发
+                从0到1 · 标准化 · 国际化 · B端商业化产品 · 自研产品 · PMP项目管理
               </p>
             </div>
           </div>

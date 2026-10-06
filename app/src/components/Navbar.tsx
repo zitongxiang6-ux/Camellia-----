@@ -6,7 +6,7 @@ const navLinks = [
   { label: '经历', href: '#experience' },
   { label: '项目', href: '#projects' },
   { label: '技能', href: '#skills' },
-  { label: '作品', href: '#works' },
+  { label: 'AI实践', href: '#works' },
   { label: '联系', href: '#contact' },
 ];
 

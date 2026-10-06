@@ -10,6 +10,7 @@ import {
   Camera,
   Tag,
   RefreshCw,
+  Bot,
 } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -17,10 +18,10 @@ gsap.registerPlugin(ScrollTrigger);
 const project1Metrics = [
   { value: '减少~30%', label: '操作步骤', desc: '下单链路优化' },
   { value: '100%', label: '订单线上化', desc: '订单在线管理' },
-  { value: '80%+', label: '周期性活动', desc: '促销活动销货率' },
-  { value: '1.3x', label: '增长倍数', desc: '小程序下单率' },
-  { value: '2x', label: '使用增长', desc: '使用率提升' },
-  { value: '98%', label: '项目管理', desc: '项目跟进率' },
+  { value: '18%', label: '转化提升', desc: '有效线索转商机' },
+  { value: '90%', label: '回答准确率', desc: '知识问答Agent' },
+  { value: '80%+', label: '查询效率', desc: '资料查询提效' },
+  { value: '250家', label: '国际客户', desc: '在线下单' },
 ];
 
 const project2Highlights = [
@@ -164,7 +165,7 @@ export default function Projects() {
                   </span>
                 </div>
                 <p className="text-[0.9375rem] text-[#6B6560] leading-[1.7] mt-4">
-                  公司内部自研自用的CRM系统，用于承接公司的渠道商与公司业务往来的客户关系管理系统。核心功能涵盖客户管理、产品管理、价格管理、项目管理、订单管理、合同管理、售后管理。
+                  公司内部自研自用的CRM系统，服务内部销售、产品团队及国内外渠道商。核心功能涵盖线索、客户、商机、产品、价格、订单、合同、售后及知识问答Agent，推动从线索到现金（LTC）全流程线上化。
                 </p>
 
                 {/* Metrics Grid */}
@@ -188,7 +189,13 @@ export default function Projects() {
                 <div className="mt-4 bg-[#2C2825] rounded-[10px] px-4 py-3.5 flex items-center gap-3">
                   <Globe size={20} className="text-[#D4A76A] flex-shrink-0" />
                   <span className="text-[0.875rem] text-[#FAF6F1]">
-                    实现国际250家客户实现在线下单，从国内版到国际版的产品成功拓展
+                    完成国际版产品、价格、客户与下单流程上线，支持250家国际客户在线下单
+                  </span>
+                </div>
+                <div className="mt-3 bg-[rgba(176,125,74,0.1)] rounded-[10px] px-4 py-3.5 flex items-center gap-3">
+                  <Bot size={20} className="text-[#B07D4A] flex-shrink-0" />
+                  <span className="text-[0.875rem] text-[#6B6560]">
+                    构建覆盖1,000+款产品、2,000+份文档的知识库，支持多轮追问与原文溯源
                   </span>
                 </div>
               </div>
@@ -212,7 +219,7 @@ export default function Projects() {
                   </span>
                 </div>
                 <p className="text-[0.9375rem] text-[#6B6560] leading-[1.7] mt-4">
-                  商业化CRM产品的SFA销售自动化模块。核心功能包括终端采集、客户拜访、库存盘点、考勤管理、活动执行、市场信息采集、积分管理。完成行业首个白酒SFA标准化产品落地。
+                  面向年销售额50亿+大型酒类企业的SFA销售自动化模块，覆盖终端采集、客户拜访、库存盘点、考勤、活动执行、市场信息采集和积分管理，完成行业首个白酒SFA标准化产品落地。
                 </p>
 
                 {/* Highlights */}
@@ -291,7 +298,7 @@ export default function Projects() {
                   </span>
                 </div>
                 <p className="text-[0.9375rem] text-[#6B6560] leading-[1.7] mt-4">
-                  商业化CRM产品的DMS经销商管理模块。核心功能包括合同管理、订单管理、促销管理、对账管理、返利管理。支撑天味食品公司DMS系统落地。
+                  面向年销售额10亿+快消品企业的DMS经销商管理模块，覆盖合同、订单、促销、对账和返利管理，解决经销商服务、订单掌握、活动触达与客户对账难题，并支撑天味食品DMS系统落地。
                 </p>
 
                 {/* Engine Cards */}
