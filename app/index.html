@@ -740,7 +740,13 @@
     .text-link span { transition: transform .2s ease; }
     .text-link:hover span { transform: translateX(4px); }
 
-    .projects-section { overflow: visible; padding-top: 12px; }
+    .projects-section { overflow: visible; padding-top: 26px; }
+    .projects-section-label {
+      width: min(calc(100vw - 48px), 1480px);
+      margin: 0 0 18px 50%;
+      color: var(--gold-light);
+      transform: translateX(-50%);
+    }
     .project-showcase {
       --parallax-x: 0px;
       --parallax-y: 0px;
@@ -2115,7 +2121,8 @@
       .career-expand-grid { grid-template-columns: 1fr; gap: 18px; }
       .career-actions { align-items: flex-start; }
       .career-hint { display: none; }
-      .projects-section { padding-top: 12px; }
+      .projects-section { padding-top: 20px; }
+      .projects-section-label { width: calc(100vw - 20px); margin-bottom: 14px; }
       .project-showcase { width: calc(100vw - 20px); min-height: 660px; border-radius: 22px; }
       .project-showcase::after { inset: 9px; border-radius: 15px; }
       .project-slide-bg { inset: -7%; width: 114%; height: 114%; }
@@ -2423,6 +2430,7 @@
 
     <section class="section dark projects-section" id="projects">
       <div class="section-inner">
+        <h2 class="section-no projects-section-label">02 / PROJECTS</h2>
         <div class="project-showcase reveal" tabindex="0" aria-label="代表项目展示，可使用左右方向键切换">
           <div class="project-slides" aria-live="polite">
             <article class="project-slide is-active" data-project-id="crm" aria-hidden="false">
