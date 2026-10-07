@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171512">
+  <meta name="robots" content="noindex">
+  <title>产品体验｜Camellia CRM</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      color-scheme: dark;
+      --black: #11100e;
+      --black-soft: #1a1713;
+      --paper: #fffaf1;
+      --gold: #c8924d;
+      --gold-light: #e1bd7e;
+      --line: rgba(225, 189, 126, .22);
+      --muted: rgba(255, 250, 241, .52);
+      --font: Inter, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; }
+    body {
+      margin: 0;
+      color: var(--paper);
+      background: var(--black);
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { color: inherit; }
+    :focus-visible { outline: 2px solid var(--gold-light); outline-offset: 4px; }
+    .page {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: minmax(0, 1.18fr) minmax(420px, .82fr);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .visual {
+      position: relative;
+      min-height: 100vh;
+      padding: clamp(28px, 4vw, 64px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #0d0c0a;
+      overflow: hidden;
+    }
+    .visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: url("/assets/project-bg-crm-v1.jpg") center / cover no-repeat;
+      transform: scale(1.045);
+      animation: breathe 12s ease-in-out infinite alternate;
+    }
+    .visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(90deg, rgba(10,9,8,.35), rgba(10,9,8,.74) 88%), linear-gradient(180deg, rgba(10,9,8,.2), rgba(10,9,8,.76));
+    }
+    @keyframes breathe { to { transform: scale(1.09) translate3d(-.7%, -.5%, 0); } }
+    .brand { display: flex; align-items: baseline; gap: 11px; width: fit-content; }
+    .brand strong { font-family: Georgia, serif; font-size: 24px; letter-spacing: -.04em; }
+    .brand span { color: var(--gold-light); font-size: 9px; font-weight: 800; letter-spacing: .18em; }
+    .visual-copy { max-width: 690px; padding-bottom: 5vh; }
+    .eyebrow { color: var(--gold-light); font-size: 10px; font-weight: 800; letter-spacing: .2em; }
+    h1 { max-width: 700px; margin: 24px 0 0; font-size: clamp(48px, 6.4vw, 96px); line-height: .98; letter-spacing: -.065em; }
+    .visual-copy p { max-width: 580px; margin: 28px 0 0; color: rgba(255,250,241,.62); font-size: 15px; line-height: 1.9; }
+    .signal { display: flex; align-items: center; gap: 10px; color: rgba(255,250,241,.38); font-size: 9px; font-weight: 700; letter-spacing: .14em; }
+    .signal i { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 18px rgba(200,146,77,.8); animation: pulse 1.8s ease-in-out infinite; }
+    @keyframes pulse { 50% { opacity: .45; transform: scale(.75); } }
+    .panel {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 42px clamp(28px, 5vw, 78px);
+      background:
+        radial-gradient(circle at 20% 10%, rgba(200,146,77,.12), transparent 28%),
+        linear-gradient(145deg, #1b1814, #11100e 70%);
+    }
+    .panel::before, .panel::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(225,189,126,.08);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .panel::before { width: 340px; height: 340px; top: -190px; right: -160px; }
+    .panel::after { width: 220px; height: 220px; bottom: -130px; left: -120px; }
+    .login-card { width: min(100%, 470px); }
+    .back { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 11px; transition: color .2s ease, transform .2s ease; }
+    .back:hover { color: var(--paper); transform: translateX(-3px); }
+    .card-head { margin-top: 64px; }
+    .card-head .kicker { color: var(--gold-light); font-size: 9px; font-weight: 800; letter-spacing: .18em; }
+    h2 { margin: 15px 0 0; font-size: clamp(34px, 4vw, 52px); line-height: 1.08; letter-spacing: -.045em; }
+    .card-head p { margin: 17px 0 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    form { margin-top: 38px; }
+    label { display: block; margin-top: 18px; color: rgba(255,250,241,.68); font-size: 10px; font-weight: 700; letter-spacing: .08em; }
+    .field {
+      width: 100%;
+      margin-top: 9px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 13px;
+      padding: 15px 16px;
+      color: var(--paper);
+      background: rgba(255,255,255,.045);
+      transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .field:hover, .field:focus { border-color: rgba(225,189,126,.46); background: rgba(255,255,255,.065); box-shadow: 0 0 0 3px rgba(200,146,77,.08); outline: none; }
+    .form-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 14px; }
+    .demo-account { color: rgba(255,250,241,.43); font-size: 10px; }
+    .demo-account strong { color: var(--gold-light); font-weight: 700; }
+    .submit {
+      width: 100%;
+      margin-top: 28px;
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      padding: 15px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: #17120d;
+      background: linear-gradient(115deg, #e0b66f, #c98c3d);
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 16px 42px rgba(200,146,77,.18);
+      transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+    }
+    .submit:hover { transform: translateY(-2px); filter: brightness(1.06); box-shadow: 0 20px 52px rgba(200,146,77,.26); }
+    .submit.is-loading { pointer-events: none; }
+    .submit.is-loading span { animation: blink .65s ease-in-out infinite alternate; }
+    @keyframes blink { to { opacity: .45; } }
+    .status { min-height: 19px; margin-top: 14px; color: #e7b888; font-size: 10px; line-height: 1.7; }
+    .note { margin-top: 42px; border-top: 1px solid rgba(255,255,255,.08); padding-top: 19px; color: rgba(255,250,241,.3); font-size: 9px; line-height: 1.75; }
+    .note a { color: var(--gold-light); }
+    @media (max-width: 900px) {
+      .page { grid-template-columns: 1fr; }
+      .visual { min-height: 46vh; }
+      .visual-copy { padding: 80px 0 20px; }
+      .visual-copy p { font-size: 13px; }
+      .panel { min-height: 54vh; padding-top: 54px; padding-bottom: 54px; }
+      .card-head { margin-top: 42px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="visual" aria-label="产品体验介绍">
+      <a class="brand" href="/" aria-label="返回 Camellia 个人网站"><strong>Camellia</strong><span>CRM PRODUCT</span></a>
+      <div class="visual-copy">
+        <div class="eyebrow">PRODUCT EXPERIENCE · PRIVATE PREVIEW</div>
+        <h1>让复杂业务，成为可以被执行的产品。</h1>
+        <p>从展会获客、线索分配，到项目报备、商机推进与客户转化。这是一个面向项目制销售团队的 CRM / SFA 产品体验入口。</p>
+      </div>
+      <div class="signal"><i></i><span>DEMO ENVIRONMENT · ONLINE</span></div>
+    </section>
+    <section class="panel">
+      <div class="login-card">
+        <a class="back" href="/">← 返回个人网站</a>
+        <div class="card-head">
+          <div class="kicker">WELCOME BACK</div>
+          <h2>登录产品体验</h2>
+          <p>当前入口用于作品体验。使用下方演示账号登录后，将进入完整作品说明与产品设计过程。</p>
+        </div>
+        <form id="login-form" novalidate>
+          <label for="username">账号</label>
+          <input class="field" id="username" name="username" autocomplete="username" value="demo" required>
+          <label for="password">密码</label>
+          <input class="field" id="password" name="password" type="password" autocomplete="current-password" value="camellia" required>
+          <div class="form-row">
+            <span class="demo-account">演示账号 <strong>demo / camellia</strong></span>
+          </div>
+          <button class="submit" type="submit"><span>进入产品体验</span><b aria-hidden="true">→</b></button>
+          <div class="status" id="status" role="status" aria-live="polite"></div>
+        </form>
+        <p class="note">本页为个人作品演示入口，不接入真实客户数据。如需进一步交流，可<a href="mailto:18292879652@163.com?subject=%E7%94%B3%E8%AF%B7%E4%BD%93%E9%AA%8C%20CRM%20%E4%BA%A7%E5%93%81">通过邮件联系</a>。</p>
+      </div>
+    </section>
+  </main>
+  <script>
+    const form = document.getElementById('login-form');
+    const status = document.getElementById('status');
+    const submit = form.querySelector('.submit');
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const username = form.elements.username.value.trim();
+      const password = form.elements.password.value;
+      if (username !== 'demo' || password !== 'camellia') {
+        status.textContent = '账号或密码不正确，请使用页面提供的演示账号。';
+        return;
+      }
+      status.textContent = '验证通过，正在进入作品体验…';
+      submit.classList.add('is-loading');
+      submit.setAttribute('aria-disabled', 'true');
+      window.setTimeout(function () {
+        window.location.assign('/?detail=work-ai-crm&from=product-login');
+      }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 650);
+    });
+  </script>
+</body>
+</html>
