@@ -1581,122 +1581,224 @@
     }
     .work-shell:hover .work-visual-label { border-color: rgba(221,185,121,.35); background: rgba(20,18,15,.8); }
 
-    .thought-intro { max-width: 800px; margin-bottom: 36px; color: var(--ink-soft); font-size: 16px; line-height: 1.9; }
-    .thought-grid { display: grid; grid-template-columns: 1.16fr .84fr; gap: 16px; }
-    .thought-card {
-      --tilt-x: 0deg;
-      --tilt-y: 0deg;
-      --card-spot-x: 50%;
-      --card-spot-y: 50%;
+    #thinking .section-head { margin-bottom: 28px; }
+    .thought-intro {
+      max-width: none;
+      display: grid;
+      grid-template-columns: 170px minmax(0, 820px);
+      gap: 34px;
+      margin: 0 0 34px;
+      border-top: 1px solid var(--line-light);
+      border-bottom: 1px solid var(--line-light);
+      padding: 24px 0;
+      color: var(--ink-soft);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+    .thought-intro::before {
+      content: "EDITOR'S NOTE";
+      color: var(--gold);
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: .2em;
+    }
+    .thought-journal {
       position: relative;
-      min-height: 280px;
+      min-height: 560px;
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1.22fr) minmax(330px, .78fr);
+      grid-template-rows: minmax(390px, 1fr) 138px;
+      overflow: hidden;
+      border: 1px solid rgba(221,185,121,.2);
+      border-radius: 28px;
+      color: var(--white);
+      background: #171411;
+      box-shadow: 0 36px 90px rgba(42,31,19,.2);
+      isolation: isolate;
+    }
+    .thought-journal::before {
+      content: "";
+      position: absolute;
+      z-index: 5;
+      inset: 0;
+      border-radius: inherit;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.045), inset 0 0 70px rgba(221,185,121,.025);
+      pointer-events: none;
+    }
+    .thought-spine {
+      position: relative;
+      grid-row: 1 / 3;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      border: 1px solid var(--line-light);
-      border-radius: var(--radius-lg);
-      padding: 30px;
-      background: rgba(255,255,255,.38);
+      border-right: 1px solid rgba(255,255,255,.08);
+      padding: 34px 28px 30px;
+      background: linear-gradient(180deg, #110f0d, #1d1813);
       overflow: hidden;
-      transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
-      transform-style: preserve-3d;
-      transition: transform .28s ease, background .25s ease, border-color .25s ease, box-shadow .28s ease;
     }
+    .thought-spine::before {
+      content: "05";
+      position: absolute;
+      right: -17px;
+      top: 48%;
+      color: transparent;
+      font-family: var(--font-display);
+      font-size: 118px;
+      font-style: italic;
+      line-height: 1;
+      -webkit-text-stroke: 1px rgba(221,185,121,.12);
+      transform: translateY(-50%) rotate(-8deg);
+      transition: transform .7s cubic-bezier(.2,.8,.2,1), -webkit-text-stroke-color .4s ease;
+    }
+    .thought-journal:hover .thought-spine::before { -webkit-text-stroke-color: rgba(221,185,121,.27); transform: translateY(-50%) rotate(0deg) scale(1.06); }
+    .thought-spine-kicker { position: relative; z-index: 1; color: var(--gold); font-size: 8px; font-weight: 800; letter-spacing: .2em; line-height: 1.65; }
+    .thought-spine-title {
+      position: relative;
+      z-index: 1;
+      align-self: flex-start;
+      color: rgba(255,250,241,.86);
+      font-family: var(--font-display);
+      font-size: 29px;
+      font-style: italic;
+      letter-spacing: -.03em;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+    .thought-spine-volume { position: relative; z-index: 1; color: rgba(255,250,241,.32); font-size: 8px; font-weight: 700; letter-spacing: .16em; line-height: 1.7; }
+    .thought-card {
+      --card-spot-x: 50%;
+      --card-spot-y: 50%;
+      position: relative;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 0;
+      padding: 42px;
+      overflow: hidden;
+      cursor: pointer;
+      transform: none;
+      transition: background .45s ease, color .35s ease, filter .35s ease;
+    }
+    .thought-journal:has(.thought-card:hover) .thought-card:not(:hover),
+    .thought-journal:has(.thought-card:focus-visible) .thought-card:not(:focus-visible),
+    .thought-journal:has(.thought-card.is-previewing) .thought-card:not(.is-previewing) { filter: brightness(.78) saturate(.72); }
+    .thought-journal:has(.thought-view-all:hover) .thought-card,
+    .thought-journal:has(.thought-view-all:focus-visible) .thought-card { filter: brightness(.82) saturate(.76); }
     .thought-card::before {
       content: "";
       position: absolute;
+      z-index: 0;
       inset: 0;
       opacity: 0;
-      background: radial-gradient(circle at var(--card-spot-x) var(--card-spot-y), rgba(200,146,77,.2), transparent 42%);
-      transition: opacity .28s ease;
+      background: radial-gradient(circle at var(--card-spot-x) var(--card-spot-y), rgba(221,185,121,.2), transparent 38%);
+      transition: opacity .35s ease;
       pointer-events: none;
     }
     .thought-card::after {
-      content: "READING NOTE";
+      content: "";
       position: absolute;
-      top: 18px;
-      right: 18px;
-      color: rgba(140,96,41,.42);
-      font-size: 7px;
-      font-weight: 800;
-      letter-spacing: .17em;
+      z-index: 0;
+      top: 0;
+      bottom: 0;
+      left: -32%;
+      width: 18%;
       opacity: 0;
-      transform: translateY(-5px);
-      transition: opacity .25s ease, transform .25s ease;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.08), transparent);
+      transform: skewX(-14deg);
+      pointer-events: none;
     }
-    .thought-card:hover,
-    .thought-card:focus-visible,
-    .thought-card.is-previewing { transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateY(-7px); border-color: rgba(200,146,77,.38); background: rgba(255,255,255,.68); box-shadow: 0 24px 60px rgba(53,42,28,.12); }
     .thought-card:hover::before,
     .thought-card:focus-visible::before,
-    .thought-card.is-previewing::before,
+    .thought-card.is-previewing::before { opacity: 1; }
     .thought-card:hover::after,
     .thought-card:focus-visible::after,
-    .thought-card.is-previewing::after { opacity: 1; }
-    .thought-card:hover::after,
-    .thought-card:focus-visible::after,
-    .thought-card.is-previewing::after { transform: translateY(0); }
-    .thought-card > * { position: relative; z-index: 1; transform: translateZ(18px); }
-    .thought-card.featured { min-height: 340px; color: var(--white); background: var(--black-2); border-color: var(--line-dark); }
-    .thought-card.featured::after { color: rgba(221,185,121,.48); }
-    .thought-card.featured:hover,
-    .thought-card.featured:focus-visible,
-    .thought-card.featured.is-previewing { background: #26211c; border-color: rgba(221,185,121,.34); }
-    .thought-card .meta { color: var(--gold); font-size: 9px; font-weight: 800; letter-spacing: .18em; }
-    .thought-card h3 { margin-top: 20px; font-family: var(--font-sans); font-size: 24px; font-weight: 600; line-height: 1.5; letter-spacing: -.025em; }
-    .thought-card.featured h3 { max-width: 760px; font-size: 31px; }
-    .thought-card.featured p { max-width: 760px; }
-    .thought-card p { margin-top: 16px; color: var(--ink-soft); font-size: 12px; line-height: 1.75; }
-    .thought-card.featured p { color: rgba(255,250,241,.5); }
-    .draft-label { align-self: flex-start; margin-top: 24px; border: 1px solid var(--line-light); border-radius: 999px; padding: 6px 9px; color: var(--muted); font-size: 9px; }
-    .featured .draft-label { border-color: rgba(255,255,255,.12); color: rgba(255,250,241,.4); }
-    .thought-card[data-detail] { cursor: pointer; }
-    .published-label { display: inline-flex; align-items: center; gap: 8px; border-color: rgba(221,185,121,.28); color: var(--gold-light); }
-    .published-label::after { content: "→"; transition: transform .2s ease; }
-    .thought-card:hover .published-label::after,
-    .thought-card:focus-visible .published-label::after { transform: translateX(4px); }
+    .thought-card.is-previewing::after { opacity: 1; animation: thoughtSweep 1.05s cubic-bezier(.2,.8,.2,1) both; }
+    @keyframes thoughtSweep { from { left: -32%; } to { left: 112%; } }
+    .thought-card > * { position: relative; z-index: 1; }
+    .thought-card-primary { grid-column: 2; grid-row: 1 / 3; border-right: 1px solid rgba(255,255,255,.08); background: radial-gradient(circle at 92% 10%, rgba(200,146,77,.12), transparent 30%), linear-gradient(145deg, #24201b, #171411 68%); }
+    .thought-card-primary:hover,
+    .thought-card-primary:focus-visible,
+    .thought-card-primary.is-previewing { background: radial-gradient(circle at 80% 18%, rgba(221,185,121,.2), transparent 35%), linear-gradient(145deg, #29231d, #181512 70%); }
+    .thought-card-secondary { grid-column: 3; grid-row: 1; color: var(--ink); background: #eee7dc; }
+    .thought-card-secondary::before { background: radial-gradient(circle at var(--card-spot-x) var(--card-spot-y), rgba(200,146,77,.24), transparent 40%); }
+    .thought-card-secondary:hover,
+    .thought-card-secondary:focus-visible,
+    .thought-card-secondary.is-previewing { background: #f4e4cb; }
+    .thought-card-index { color: rgba(221,185,121,.2); font-family: var(--font-display); font-size: 92px; font-style: italic; line-height: .78; transition: color .35s ease, transform .55s cubic-bezier(.2,.8,.2,1); }
+    .thought-card-secondary .thought-card-index { color: rgba(118,76,27,.15); font-size: 64px; }
+    .thought-card:hover .thought-card-index,
+    .thought-card:focus-visible .thought-card-index,
+    .thought-card.is-previewing .thought-card-index { color: rgba(221,185,121,.46); transform: translateY(-4px) rotate(-5deg); }
+    .thought-card-secondary:hover .thought-card-index,
+    .thought-card-secondary:focus-visible .thought-card-index,
+    .thought-card-secondary.is-previewing .thought-card-index { color: rgba(118,76,27,.3); }
+    .thought-card-top { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .thought-card .meta { color: var(--gold); font-size: 8px; font-weight: 800; letter-spacing: .18em; }
+    .thought-card-secondary .meta { color: #a36f32; }
+    .thought-card-type { color: rgba(255,250,241,.28); font-size: 7px; font-weight: 800; letter-spacing: .18em; }
+    .thought-card-secondary .thought-card-type { color: rgba(67,53,37,.38); }
+    .thought-card-copy { margin-top: auto; padding: 36px 0 42px; transition: transform .45s cubic-bezier(.2,.8,.2,1); }
+    .thought-card:hover .thought-card-copy,
+    .thought-card:focus-visible .thought-card-copy,
+    .thought-card.is-previewing .thought-card-copy { transform: translateY(-7px); }
+    .thought-card h3 { max-width: 710px; margin-top: 0; font-family: var(--font-sans); font-size: clamp(30px, 3.1vw, 46px); font-weight: 620; line-height: 1.3; letter-spacing: -.04em; text-wrap: balance; }
+    .thought-card-secondary h3 { max-width: 420px; font-size: clamp(22px, 2vw, 29px); line-height: 1.42; }
+    .thought-card p { max-width: 650px; margin-top: 18px; color: rgba(255,250,241,.5); font-size: 12px; line-height: 1.8; }
+    .thought-card-secondary p { color: #6a6259; }
+    .thought-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px; }
+    .thought-card-secondary .thought-card-footer { border-top-color: rgba(74,58,40,.13); }
+    .thought-card-link { color: rgba(255,250,241,.5); font-size: 9px; font-weight: 750; letter-spacing: .12em; }
+    .thought-card-secondary .thought-card-link { color: #766d63; }
+    .thought-card-arrow { width: 46px; height: 46px; display: grid; place-items: center; border: 1px solid rgba(221,185,121,.26); border-radius: 50%; color: var(--gold-light); font-size: 18px; transition: color .3s ease, background .3s ease, transform .35s cubic-bezier(.2,.8,.2,1); }
+    .thought-card-secondary .thought-card-arrow { border-color: rgba(118,76,27,.2); color: #996a31; }
+    .thought-card:hover .thought-card-arrow,
+    .thought-card:focus-visible .thought-card-arrow,
+    .thought-card.is-previewing .thought-card-arrow { color: #18130e; background: var(--gold-light); transform: translate(4px,-4px) rotate(8deg); }
     .thought-view-all {
       position: relative;
+      grid-column: 3;
+      grid-row: 2;
       width: 100%;
-      min-height: 92px;
+      min-height: 138px;
       display: grid;
-      grid-template-columns: 150px 1fr auto;
-      gap: 24px;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
       align-items: center;
-      margin-top: 16px;
-      border: 1px solid rgba(200,146,77,.28);
-      border-radius: var(--radius-lg);
-      padding: 22px 28px;
+      border: 0;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 24px 30px;
       color: var(--white);
-      background: linear-gradient(110deg, #211d19, #2c251e);
+      background: #1d1915;
       overflow: hidden;
       cursor: pointer;
       text-align: left;
-      transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+      transition: background .35s ease;
     }
     .thought-view-all::before {
-      content: "";
+      content: "07";
       position: absolute;
-      width: 260px;
-      height: 260px;
-      right: -90px;
-      top: -100px;
-      border: 1px solid rgba(221,185,121,.13);
-      border-radius: 50%;
-      box-shadow: 0 0 0 34px rgba(221,185,121,.035), 0 0 0 70px rgba(221,185,121,.025);
-      transition: transform .55s cubic-bezier(.2,.8,.2,1);
+      right: 68px;
+      bottom: -25px;
+      color: transparent;
+      font-family: var(--font-display);
+      font-size: 96px;
+      font-style: italic;
+      line-height: 1;
+      -webkit-text-stroke: 1px rgba(221,185,121,.13);
+      transition: transform .5s cubic-bezier(.2,.8,.2,1), -webkit-text-stroke-color .3s ease;
     }
     .thought-view-all:hover,
-    .thought-view-all:focus-visible { transform: translateY(-4px); border-color: rgba(221,185,121,.55); box-shadow: 0 22px 54px rgba(53,42,28,.16); }
+    .thought-view-all:focus-visible { background: #29221b; }
     .thought-view-all:hover::before,
-    .thought-view-all:focus-visible::before { transform: scale(1.13) rotate(18deg); }
+    .thought-view-all:focus-visible::before { -webkit-text-stroke-color: rgba(221,185,121,.32); transform: translateX(-10px) rotate(-6deg); }
     .thought-view-all > * { position: relative; z-index: 1; }
-    .thought-view-all .view-all-meta { color: var(--gold); font-size: 9px; font-weight: 800; letter-spacing: .18em; }
-    .thought-view-all strong { display: block; font-size: 20px; letter-spacing: -.02em; }
-    .thought-view-all .view-all-copy { display: block; margin-top: 5px; color: rgba(255,250,241,.46); font-size: 11px; line-height: 1.65; }
-    .thought-view-all .view-all-arrow { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.14); border-radius: 50%; color: var(--gold-light); font-size: 18px; transition: transform .25s ease, background .25s ease; }
+    .thought-view-all .view-all-meta { display: block; margin-bottom: 7px; color: var(--gold); font-size: 8px; font-weight: 800; letter-spacing: .18em; }
+    .thought-view-all strong { display: block; font-size: 18px; letter-spacing: -.02em; }
+    .thought-view-all .view-all-copy { display: block; margin-top: 5px; color: rgba(255,250,241,.4); font-size: 9px; line-height: 1.6; }
+    .thought-view-all .view-all-arrow { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.14); border-radius: 50%; color: var(--gold-light); font-size: 18px; transition: transform .3s ease, color .3s ease, background .3s ease; }
     .thought-view-all:hover .view-all-arrow,
-    .thought-view-all:focus-visible .view-all-arrow { transform: translateX(4px) rotate(-8deg); background: rgba(221,185,121,.1); }
+    .thought-view-all:focus-visible .view-all-arrow { color: #18130e; background: var(--gold-light); transform: translate(4px,-4px) rotate(8deg); }
 
     .contact-box {
       --contact-spot-x: 70%;
@@ -2099,7 +2201,16 @@
       .work-shell { grid-template-columns: 1fr; }
       .work-visual { min-height: 410px; }
       .work-flow-rail { left: 34px; right: 34px; }
-      .thought-grid { grid-template-columns: 1fr 1fr; }
+      .thought-intro { grid-template-columns: 135px minmax(0, 1fr); gap: 26px; }
+      .thought-journal { grid-template-columns: 112px minmax(0, 1.12fr) minmax(280px, .88fr); grid-template-rows: minmax(360px, 1fr) 130px; }
+      .thought-spine { padding: 28px 20px 24px; }
+      .thought-spine-title { font-size: 25px; }
+      .thought-card { padding: 32px; }
+      .thought-card-index { font-size: 78px; }
+      .thought-card-copy { padding: 28px 0 34px; }
+      .thought-card h3 { font-size: clamp(28px, 3.3vw, 39px); }
+      .thought-card-secondary h3 { font-size: 22px; }
+      .thought-view-all { padding: 20px 24px; }
       .article-library-layout { grid-template-columns: minmax(0,1fr) 300px; gap: 28px; }
       .method-ai-inner { width: calc(100vw - 40px); }
       .method-ai-heading { grid-template-columns: 145px 1fr; }
@@ -2242,10 +2353,24 @@
       .work-flow-rail { display: none; }
       .work-visual-label { right: 18px; bottom: 18px; left: 18px; max-width: none; }
       .launch-mark { width: 96px; height: 96px; }
-      .thought-grid { grid-template-columns: 1fr; }
-      .thought-card > * { transform: none; }
-      .thought-view-all { grid-template-columns: 1fr auto; padding: 22px; }
-      .thought-view-all .view-all-meta { grid-column: 1 / -1; }
+      #thinking .section-head { margin-bottom: 22px; }
+      .thought-intro { grid-template-columns: 1fr; gap: 10px; margin-bottom: 24px; padding: 18px 0; font-size: 13px; }
+      .thought-journal { min-height: 0; display: block; border-radius: 22px; }
+      .thought-spine { min-height: 90px; flex-direction: row; align-items: center; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.08); padding: 22px; }
+      .thought-spine::before { right: 16px; top: 50%; font-size: 82px; transform: translateY(-50%) rotate(-8deg); }
+      .thought-spine-title { font-size: 23px; writing-mode: initial; transform: none; }
+      .thought-spine-volume { text-align: right; }
+      .thought-card { padding: 28px 24px; }
+      .thought-card-primary { min-height: 430px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .thought-card-secondary { min-height: 330px; }
+      .thought-card-index { font-size: 70px; }
+      .thought-card-secondary .thought-card-index { font-size: 54px; }
+      .thought-card-top { align-items: flex-start; }
+      .thought-card-copy { padding: 30px 0; }
+      .thought-card h3 { font-size: 28px; }
+      .thought-card-secondary h3 { font-size: 22px; }
+      .thought-card-footer { padding-top: 16px; }
+      .thought-view-all { min-height: 124px; grid-template-columns: 1fr auto; padding: 22px 24px; }
       .thought-view-all .view-all-copy { display: none; }
       .contact-box { grid-template-columns: 1fr; gap: 34px; padding: 32px 22px; }
       .contact-box::after { right: -270px; bottom: -270px; }
@@ -2740,29 +2865,50 @@
           </div>
         </div>
         <p class="thought-intro reveal">我喜欢复盘，也相信经验只有被沉淀，才不会随着项目结束而消失。像系统里的数据一样，记录、分析、再理解，最后长成下一次判断。这里写下我保留了什么、放弃了什么，以及这些取舍如何让我继续成长。</p>
-        <div class="thought-grid">
-          <article class="thought-card featured reveal" tabindex="0" role="button" aria-label="阅读文章：AI 工作台实战之“让 AI 接手那些躲不开的重复工作”" data-tilt-card data-detail="article-ai-workbench">
-            <div>
+        <div class="thought-journal reveal">
+          <aside class="thought-spine" aria-hidden="true">
+            <span class="thought-spine-kicker">PRODUCT<br>FIELD NOTES</span>
+            <strong class="thought-spine-title">Journal</strong>
+            <span class="thought-spine-volume">VOL. 07<br>2026</span>
+          </aside>
+
+          <article class="thought-card thought-card-primary" tabindex="0" role="button" aria-label="阅读文章：AI 工作台实战之“让 AI 接手那些躲不开的重复工作”" data-tilt-card data-detail="article-ai-workbench">
+            <div class="thought-card-top">
               <div class="meta">AI WORKBENCH · PRACTICE NOTE</div>
+              <span class="thought-card-type">FEATURED STORY</span>
+            </div>
+            <span class="thought-card-index" aria-hidden="true">01</span>
+            <div class="thought-card-copy">
               <h3>AI 工作台实战之“让 AI 接手那些躲不开的重复工作”</h3>
               <p>AI 最该先接走的，不是决策，是那些没价值又躲不开的琐事。</p>
             </div>
-            <span class="draft-label published-label">站内阅读全文</span>
+            <div class="thought-card-footer">
+              <span class="thought-card-link">站内阅读全文</span>
+              <span class="thought-card-arrow" aria-hidden="true">↗</span>
+            </div>
           </article>
-          <article class="thought-card reveal" tabindex="0" role="button" aria-label="阅读文章：从0到1搭建AI知识问答复盘（1）" data-tilt-card data-detail="article-ai-qa-discovery">
-            <div>
+
+          <article class="thought-card thought-card-secondary" tabindex="0" role="button" aria-label="阅读文章：从0到1搭建AI知识问答复盘（1）" data-tilt-card data-detail="article-ai-qa-discovery">
+            <div class="thought-card-top">
               <div class="meta">AI PRODUCT · DISCOVERY</div>
+              <span class="thought-card-type">NEW NOTE</span>
+            </div>
+            <span class="thought-card-index" aria-hidden="true">02</span>
+            <div class="thought-card-copy">
               <h3>从0到1搭建AI知识问答复盘（1）</h3>
               <p>最近准备做一下AI知识问答项目的复盘，这个项目大概搞了两个月，前面也写了一些文章记录自己在执行过程中遇到的问题。</p>
             </div>
-            <span class="draft-label published-label">站内阅读全文</span>
+            <div class="thought-card-footer">
+              <span class="thought-card-link">站内阅读全文</span>
+              <span class="thought-card-arrow" aria-hidden="true">↗</span>
+            </div>
           </article>
+
+          <button class="thought-view-all" type="button" data-detail="article-index" data-magnetic aria-label="查看全部 7 篇文章">
+            <span><span class="view-all-meta">WRITING ARCHIVE · 07</span><strong>进入文章档案</strong><span class="view-all-copy">产品判断、AI 实践、交付复盘与个人工具</span></span>
+            <span class="view-all-arrow" aria-hidden="true">↗</span>
+          </button>
         </div>
-        <button class="thought-view-all reveal" type="button" data-detail="article-index" data-magnetic aria-label="查看全部 7 篇文章">
-          <span class="view-all-meta">WRITING ARCHIVE · 07</span>
-          <span><strong>查看全部文章</strong><span class="view-all-copy">产品判断、AI 实践、交付复盘与个人工具</span></span>
-          <span class="view-all-arrow" aria-hidden="true">↗</span>
-        </button>
       </div>
     </section>
 
