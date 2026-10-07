@@ -6,8 +6,10 @@ const appRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const projectRoot = resolve(appRoot, '..', '..', '..');
 const approvedSource = resolve(projectRoot, '03_Drafts', '个人网站-黑金交互初稿-v1.html');
 const approvedAssets = resolve(projectRoot, '03_Drafts', 'assets');
+const approvedArticles = resolve(projectRoot, '03_Drafts', 'article-originals.json');
 const productionIndex = resolve(appRoot, 'index.html');
 const productionAssets = resolve(appRoot, 'public', 'assets');
+const productionArticles = resolve(appRoot, 'public', 'article-originals.json');
 
 const replacements = [
   [
@@ -71,6 +73,8 @@ for (const entry of await readdir(approvedAssets, { withFileTypes: true })) {
   if (!entry.isFile() || !['.jpg', '.jpeg', '.png', '.webp', '.svg'].includes(extname(entry.name).toLowerCase())) continue;
   await copyFile(resolve(approvedAssets, entry.name), resolve(productionAssets, entry.name));
 }
+
+await copyFile(approvedArticles, productionArticles);
 
 await writeFile(productionIndex, html, 'utf8');
 console.log(`Promoted approved site to ${productionIndex}`);

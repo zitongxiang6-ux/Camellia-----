@@ -1848,6 +1848,18 @@
     .article-detail .detail-hero::after { content: "THINK / VERIFY / DECIDE"; position: absolute; right: -22px; bottom: 10px; color: rgba(221,185,121,.045); font-size: clamp(48px, 8vw, 104px); font-weight: 800; letter-spacing: -.05em; white-space: nowrap; pointer-events: none; }
     .article-detail .detail-hero-inner { position: relative; z-index: 1; }
     .article-detail .detail-content { width: min(920px, calc(100vw - 96px)); }
+    .article-detail:not(.original-ready) .detail-lead,
+    .article-detail:not(.original-ready) .detail-meta,
+    .article-detail:not(.original-ready) .detail-content { visibility: hidden; }
+    .article-original { max-width: 760px; margin: 0 auto; }
+    .article-original::before { content: "ORIGINAL WRITING"; display: block; margin-bottom: 36px; color: var(--gold); font-size: 9px; font-weight: 800; letter-spacing: .2em; }
+    .article-original p { margin: 0 0 24px; color: #514c45; font-size: 15px; line-height: 2; white-space: normal; }
+    .article-original h3 { margin: 58px 0 22px; color: var(--ink); font-family: var(--font-sans); font-size: 25px; font-weight: 700; line-height: 1.5; letter-spacing: -.02em; }
+    .article-original h3:first-child { margin-top: 0; }
+    .article-original-index { margin: 58px 0 10px; color: var(--gold); font-family: var(--font-display); font-size: 40px; font-style: italic; line-height: 1; }
+    .article-original br { content: ""; }
+    .article-original br + br { display: none; }
+    .article-original-error { border: 1px solid var(--line-light); border-radius: 14px; padding: 24px; color: var(--ink-soft); background: rgba(255,255,255,.42); font-size: 13px; line-height: 1.8; }
     .article-lead-quote { border-left: 3px solid var(--gold); padding: 9px 0 9px 24px; color: var(--ink); font-family: var(--font-display); font-size: clamp(24px, 3vw, 38px); font-weight: 600; line-height: 1.55; }
     .article-lead-quote small { display: block; margin-top: 15px; color: var(--muted); font-family: var(--font-sans); font-size: 10px; font-weight: 700; letter-spacing: .14em; }
     .article-flow { display: grid; grid-template-columns: repeat(6, 1fr); gap: 7px; margin-top: 24px; }
@@ -2672,19 +2684,19 @@
         </div>
         <p class="thought-intro reveal">我喜欢复盘，也相信经验只有被沉淀，才不会随着项目结束而消失。像系统里的数据一样，记录、分析、再理解，最后长成下一次判断。这里写下我保留了什么、放弃了什么，以及这些取舍如何让我继续成长。</p>
         <div class="thought-grid">
-          <article class="thought-card featured reveal" tabindex="0" role="button" aria-label="阅读文章：把重复工作交给 AI 之后，我保留了什么" data-tilt-card data-detail="article-ai-workbench">
+          <article class="thought-card featured reveal" tabindex="0" role="button" aria-label="阅读文章：AI 工作台实战之“让 AI 接手那些躲不开的重复工作”" data-tilt-card data-detail="article-ai-workbench">
             <div>
               <div class="meta">AI WORKBENCH · PRACTICE NOTE</div>
-              <h3>把重复工作交给 AI 之后，我保留了什么</h3>
-              <p>用操作手册和会议纪要两个真实任务，复盘如何把重复搬运交给 AI，同时把证据、责任边界和最终判断留在人手里。</p>
+              <h3>AI 工作台实战之“让 AI 接手那些躲不开的重复工作”</h3>
+              <p>AI 最该先接走的，不是决策，是那些没价值又躲不开的琐事。</p>
             </div>
             <span class="draft-label published-label">站内阅读全文</span>
           </article>
-          <article class="thought-card reveal" tabindex="0" role="button" aria-label="阅读文章：第一个企业 AI 项目，我怎样选择切入场景" data-tilt-card data-detail="article-ai-qa-discovery">
+          <article class="thought-card reveal" tabindex="0" role="button" aria-label="阅读文章：从0到1搭建AI知识问答复盘（1）" data-tilt-card data-detail="article-ai-qa-discovery">
             <div>
               <div class="meta">AI PRODUCT · DISCOVERY</div>
-              <h3>第一个企业 AI 项目，我怎样选择切入场景</h3>
-              <p>先判断“要不要做、能不能做”，再决定知识库、实时数据、测试集和上线指标，避免为 AI 而 AI。</p>
+              <h3>从0到1搭建AI知识问答复盘（1）</h3>
+              <p>最近准备做一下AI知识问答项目的复盘，这个项目大概搞了两个月，前面也写了一些文章记录自己在执行过程中遇到的问题。</p>
             </div>
             <span class="draft-label published-label">站内阅读全文</span>
           </article>
@@ -2943,26 +2955,26 @@
 
         <div class="article-library-layout">
           <div class="article-index-list" aria-live="polite">
-            <article class="article-index-card is-previewing" tabindex="0" role="button" data-article-item data-category="ai context" data-detail="article-ai-workbench" data-preview-no="01" data-preview-meta="AI WORKBENCH · PRACTICE NOTE" data-preview-title="把重复工作交给 AI 之后，我保留了什么" data-preview-copy="当执行可以被加速，产品经理更需要守住证据、责任边界和最终判断。">
-              <span class="article-index-no">01</span><div><div class="article-index-meta">AI WORKBENCH · PRACTICE NOTE</div><h3>把重复工作交给 AI 之后，我保留了什么</h3><p>用操作手册和会议纪要两个真实任务，复盘如何把重复搬运交给 AI，同时把证据、责任边界和最终判断留在人手里。</p></div><span class="article-index-arrow" aria-hidden="true">↗</span>
+            <article class="article-index-card is-previewing" tabindex="0" role="button" data-article-item data-category="ai context" data-detail="article-ai-workbench" data-preview-no="01" data-preview-meta="AI WORKBENCH · PRACTICE NOTE" data-preview-title="AI 工作台实战之“让 AI 接手那些躲不开的重复工作”" data-preview-copy="AI 最该先接走的，不是决策，是那些没价值又躲不开的琐事。">
+              <span class="article-index-no">01</span><div><div class="article-index-meta">AI WORKBENCH · PRACTICE NOTE</div><h3>AI 工作台实战之“让 AI 接手那些躲不开的重复工作”</h3><p>AI 最该先接走的，不是决策，是那些没价值又躲不开的琐事。</p></div><span class="article-index-arrow" aria-hidden="true">↗</span>
             </article>
-            <article class="article-index-card" tabindex="0" role="button" data-article-item data-category="ai delivery" data-detail="article-ai-iteration" data-preview-no="02" data-preview-meta="PRODUCT DELIVERY · PRACTICE NOTE" data-preview-title="AI 接进产品迭代后，我重新设计了交付链路" data-preview-copy="AI 不是新增的一道工序，而是需要重新安排证据、评审与交付之间的关系。">
-              <span class="article-index-no">02</span><div><div class="article-index-meta">PRODUCT DELIVERY · PRACTICE NOTE</div><h3>AI 接进产品迭代后，我重新设计了交付链路</h3><p>从截图补齐现状，到需求拆解、可点击 Demo、PRD 与变更同步，让 AI 进入已有系统的迭代现场。</p></div><span class="article-index-arrow" aria-hidden="true">↗</span>
+            <article class="article-index-card" tabindex="0" role="button" data-article-item data-category="ai delivery" data-detail="article-ai-iteration" data-preview-no="02" data-preview-meta="PRODUCT DELIVERY · PRACTICE NOTE" data-preview-title="AI工作台实战之“把AI接进产品迭代”" data-preview-copy="目的也很直接，把反复整理、搬运和同步的活交给我，给脏脏多留一点时间做业务判断。">
+              <span class="article-index-no">02</span><div><div class="article-index-meta">PRODUCT DELIVERY · PRACTICE NOTE</div><h3>AI工作台实战之“把AI接进产品迭代”</h3><p>目的也很直接，把反复整理、搬运和同步的活交给我，给脏脏多留一点时间做业务判断。</p></div><span class="article-index-arrow" aria-hidden="true">↗</span>
             </article>
-            <article class="article-index-card" tabindex="0" role="button" data-article-item data-category="ai context" data-detail="article-context-memory" data-preview-no="03" data-preview-meta="CONTEXT ENGINEERING · SYSTEM NOTE" data-preview-title="给工作台建立一套可维护的记忆系统" data-preview-copy="信息不是越多越好。可信、分层、可维护，才是 Context 真正进入工作的前提。">
-              <span class="article-index-no">03</span><div><div class="article-index-meta">CONTEXT ENGINEERING · SYSTEM NOTE</div><h3>给工作台建立一套可维护的记忆系统</h3><p>把已确认事实、进行中的变化和待核实材料分层，让 AI 知道什么可以相信、什么需要再次确认。</p></div><span class="article-index-arrow" aria-hidden="true">↗</span>
+            <article class="article-index-card" tabindex="0" role="button" data-article-item data-category="ai context" data-detail="article-context-memory" data-preview-no="03" data-preview-meta="CONTEXT ENGINEERING · SYSTEM NOTE" data-preview-title="把 CRM 搬进来以后，我又给工作台装了一套“记忆系统”" data-preview-copy="每次开始一个新任务，还是要重新解释产品是什么、现在有哪些模块、需求进行到哪一步、哪些内容已经确认、哪些只是之前随手记下的想法。">
+              <span class="article-index-no">03</span><div><div class="article-index-meta">CONTEXT ENGINEERING · SYSTEM NOTE</div><h3>把 CRM 搬进来以后，我又给工作台装了一套“记忆系统”</h3><p>每次开始一个新任务，还是要重新解释产品是什么、现在有哪些模块、需求进行到哪一步、哪些内容已经确认、哪些只是之前随手记下的想法。</p></div><span class="article-index-arrow" aria-hidden="true">↗</span>
             </article>
-            <article class="article-index-card" tabindex="0" role="button" data-article-item data-category="ai context delivery" data-detail="article-agent-migration" data-preview-no="04" data-preview-meta="PM AGENT · MIGRATION NOTE" data-preview-title="迁移一套 PM Agent，真正难的是适配" data-preview-copy="文件能被复制，工作方式却不能。迁移的核心是让规则、技能和业务语境重新咬合。">
-              <span class="article-index-no">04</span><div><div class="article-index-meta">PM AGENT · MIGRATION NOTE</div><h3>迁移一套 PM Agent，真正难的是适配</h3><p>文件能打开，不等于工作台会工作。一次迁移需要同时处理工具规则、技能边界、业务语境和交付链路。</p></div><span class="article-index-arrow" aria-hidden="true">↗</span>
+            <article class="article-index-card" tabindex="0" role="button" data-article-item data-category="ai context delivery" data-detail="article-agent-migration" data-preview-no="04" data-preview-meta="PM AGENT · MIGRATION NOTE" data-preview-title="我把一个 Claude Code 的 PM Agent 搬进 Codex，结果发现复制文件只是第一步" data-preview-copy="把 Claude Code 的文件复制到 Codex，只完成了“搬家”。门牌号、房间用途、水电线路，统统还没对上。">
+              <span class="article-index-no">04</span><div><div class="article-index-meta">PM AGENT · MIGRATION NOTE</div><h3>我把一个 Claude Code 的 PM Agent 搬进 Codex，结果发现复制文件只是第一步</h3><p>把 Claude Code 的文件复制到 Codex，只完成了“搬家”。门牌号、房间用途、水电线路，统统还没对上。</p></div><span class="article-index-arrow" aria-hidden="true">↗</span>
             </article>
-            <article class="article-index-card" tabindex="0" role="button" data-article-item data-category="ai" data-detail="article-ai-qa-discovery" data-preview-no="05" data-preview-meta="AI PRODUCT · DISCOVERY" data-preview-title="第一个企业 AI 项目，我怎样选择切入场景" data-preview-copy="比“做什么 AI”更早的问题，是它是否值得做、能力边界在哪里、怎样证明价值。">
-              <span class="article-index-no">05</span><div><div class="article-index-meta">AI PRODUCT · DISCOVERY</div><h3>第一个企业 AI 项目，我怎样选择切入场景</h3><p>先判断“要不要做、能不能做”，再决定知识库、实时数据、测试集和上线指标，避免为 AI 而 AI。</p></div><span class="article-index-arrow" aria-hidden="true">↗</span>
+            <article class="article-index-card" tabindex="0" role="button" data-article-item data-category="ai" data-detail="article-ai-qa-discovery" data-preview-no="05" data-preview-meta="AI PRODUCT · DISCOVERY" data-preview-title="从0到1搭建AI知识问答复盘（1）" data-preview-copy="最近准备做一下AI知识问答项目的复盘，这个项目大概搞了两个月，前面也写了一些文章记录自己在执行过程中遇到的问题。">
+              <span class="article-index-no">05</span><div><div class="article-index-meta">AI PRODUCT · DISCOVERY</div><h3>从0到1搭建AI知识问答复盘（1）</h3><p>最近准备做一下AI知识问答项目的复盘，这个项目大概搞了两个月，前面也写了一些文章记录自己在执行过程中遇到的问题。</p></div><span class="article-index-arrow" aria-hidden="true">↗</span>
             </article>
-            <article class="article-index-card" tabindex="0" role="button" data-article-item data-category="ai delivery" data-detail="article-ai-qa-delivery" data-preview-no="06" data-preview-meta="AI PRODUCT · DELIVERY" data-preview-title="AI 知识问答上线前后，产品经理具体做什么" data-preview-copy="上线只是起点。Badcase、数据流和工程约束，决定一个 AI 产品能否真正被使用。">
-              <span class="article-index-no">06</span><div><div class="article-index-meta">AI PRODUCT · DELIVERY</div><h3>AI 知识问答上线前后，产品经理具体做什么</h3><p>从 Badcase 定位、工程化约束到灰度发布与持续迭代，产品经理需要深入数据流，而不只负责写需求。</p></div><span class="article-index-arrow" aria-hidden="true">↗</span>
+            <article class="article-index-card" tabindex="0" role="button" data-article-item data-category="ai delivery" data-detail="article-ai-qa-delivery" data-preview-no="06" data-preview-meta="AI PRODUCT · DELIVERY" data-preview-title="从0到1搭建AI知识问答复盘（2）" data-preview-copy="回到正题，今天继续复盘，这是【从0搭建AI知识问答复盘】的第二篇文章，主要是包括项目落地的剩余3个阶段——阶段三：开发与测试、阶段四：上线及运营、阶段五：持续性迭代。">
+              <span class="article-index-no">06</span><div><div class="article-index-meta">AI PRODUCT · DELIVERY</div><h3>从0到1搭建AI知识问答复盘（2）</h3><p>回到正题，今天继续复盘，这是【从0搭建AI知识问答复盘】的第二篇文章，主要是包括项目落地的剩余3个阶段——阶段三：开发与测试、阶段四：上线及运营、阶段五：持续性迭代。</p></div><span class="article-index-arrow" aria-hidden="true">↗</span>
             </article>
-            <article class="article-index-card" tabindex="0" role="button" data-article-item data-category="ai tool" data-detail="article-travel-skill" data-preview-no="07" data-preview-meta="VIBECODING · PERSONAL TOOL" data-preview-title="我把旅行攻略拆成一个可交互的 Skill" data-preview-copy="工具的价值不是替人做选择，而是把杂乱信息整理成仍由人掌控的行动路径。">
-              <span class="article-index-no">07</span><div><div class="article-index-meta">VIBECODING · PERSONAL TOOL</div><h3>我把旅行攻略拆成一个可交互的 Skill</h3><p>AI 不替我决定去哪里，而是完成信息搜集、选项比较、路线优化和待办整理，把掌控感还给旅行者。</p></div><span class="article-index-arrow" aria-hidden="true">↗</span>
+            <article class="article-index-card" tabindex="0" role="button" data-article-item data-category="ai tool" data-detail="article-travel-skill" data-preview-no="07" data-preview-meta="VIBECODING · PERSONAL TOOL" data-preview-title="放假前我用Kimi Claw写了一个skill做旅行攻略" data-preview-copy="我实在不想和之前一样“从大量的看小红书推荐”开始，所以懒人灵机一动，干脆做个比较符合本人做旅行攻略的skill。">
+              <span class="article-index-no">07</span><div><div class="article-index-meta">VIBECODING · PERSONAL TOOL</div><h3>放假前我用Kimi Claw写了一个skill做旅行攻略</h3><p>我实在不想和之前一样“从大量的看小红书推荐”开始，所以懒人灵机一动，干脆做个比较符合本人做旅行攻略的skill。</p></div><span class="article-index-arrow" aria-hidden="true">↗</span>
             </article>
           </div>
 
@@ -2970,8 +2982,8 @@
             <div>
               <div class="article-preview-top"><span>HOVER TO PREVIEW</span><span data-preview-meta>AI WORKBENCH</span></div>
               <div class="article-preview-index" data-preview-no>01</div>
-              <h3 data-preview-title>把重复工作交给 AI 之后，我保留了什么</h3>
-              <p data-preview-copy>当执行可以被加速，产品经理更需要守住证据、责任边界和最终判断。</p>
+              <h3 data-preview-title>AI 工作台实战之“让 AI 接手那些躲不开的重复工作”</h3>
+              <p data-preview-copy>AI 最该先接走的，不是决策，是那些没价值又躲不开的琐事。</p>
             </div>
             <div class="article-preview-read"><span>READ INSIDE</span><span>↗</span></div>
           </aside>
@@ -2982,164 +2994,66 @@
     <article class="detail-page article-detail" data-page="article-ai-workbench">
       <header class="detail-hero">
         <div class="detail-hero-inner">
-          <div class="eyebrow">WRITING · AI WORKBENCH</div>
-          <h2>把重复工作交给 AI 之后，<br>我保留了什么</h2>
-          <p class="detail-lead">复盘我如何用一套持续积累 Context、复用组织模板并经过人工校验的工作台，完成操作手册和会议纪要两类“低创造性、高准确性”的产品工作。</p>
-          <div class="detail-meta"><div><span>FORMAT</span><strong>站内长文</strong></div><div><span>TYPE</span><strong>AI 协作实战复盘</strong></div><div><span>TOPIC</span><strong>Context / 文档工程</strong></div><div><span>VALUE</span><strong>证据 / 判断 / 人在回路</strong></div></div>
+          <div class="eyebrow">ORIGINAL WRITING · 01</div>
+          <h2>AI 工作台实战之“让 AI 接手那些躲不开的重复工作”</h2>
         </div>
       </header>
-      <div class="detail-content">
-        <section class="detail-section"><div class="detail-label">核心观点</div><div class="detail-body"><div class="article-lead-quote">AI 最该先接走的，不是决策，而是那些有明确输入、有稳定格式、能够被检查，却反复消耗人的工作。<small>THE WORK SHOULD MOVE · THE JUDGMENT SHOULD STAY</small></div><p>操作手册和会议纪要本身并非没有价值。真正低价值的是人在其中不断复制、搬运、套格式、对版本。产物越重要，生成过程就越需要证据、约束和校验，也越适合被设计成一条人机协作的生产线。</p></div></section>
-
-        <section class="detail-section"><div class="detail-label">问题定义</div><div class="detail-body"><h3>这类工作不难，但不能错</h3><p>手册写错按钮的出现条件，用户会以为系统故障；纪要把“需要评估”写成“已经确定”，开发可能直接按一个从未拍板的方案开工。因此它们不是普通的文字工作，而是典型的“低创造性、高准确性”任务。</p><ul><li>输入通常已有依据：原型、历史文档、逐字稿、业务规则与组织模板。</li><li>输出格式相对稳定：操作步骤、角色流程、共识、争议与行动项。</li><li>结果可以被验证：对照页面、回看原话、检查责任人、渲染成品。</li><li>关键决策仍需人承担：什么算事实、哪里需要取舍、谁对结果负责。</li></ul></div></section>
-
-        <section class="detail-section"><div class="detail-label">案例一</div><div class="detail-body"><h3>从知识库直接生成一份可用的操作手册</h3><h4>先准备能够互相校验的 Context</h4><p>工作台里已有最新 CRM 后台端与渠道商端 Axure 原型、原型导出的 HTML 与页面截图、历史国际渠道商下单手册、培训 PPT、相关业务流程，以及公司长期使用的演示模板。原型说明版本变化，导出页面证明用户真正能看到什么，历史材料延续组织术语，模板约束最终交付形式。</p><h4>再明确不能越过的边界</h4><ul><li>手册不能只是功能清单，要让实际操作者知道从哪里进入、先做什么、完成后交给谁。</li><li>同时服务“按角色快速查找”和“按完整流程培训”两种场景。</li><li>关键步骤必须对应真实页面，并说明所属菜单、订单状态和进入条件。</li><li>最终交付可编辑 PPT 与便于传播的 PDF；原型未定义的字段不能自行补全。</li></ul><h4>AI 接走生产，人负责判断</h4><p>AI 先整理页面、字段、按钮、状态、角色与空白项，形成核对清单，再重组章节、复用模板、插入页面图、生成 PPT、逐页渲染检查并导出 PDF。第一版形成了 36 页完整内容，而人只需集中判断：两类销售账号是否分开说明、日常查找与培训是否拆成两套结构、哪些业务差异必须重点强调。</p><div class="detail-note"><strong>真正节省的时间：</strong>不是少开一次聊天，而是 AI 能自己从长期 Context 中找到证据、完成生产，再把少数需要负责人拍板的问题交还给人。</div></div></section>
-
-        <section class="detail-section"><div class="detail-label">案例二</div><div class="detail-body"><h3>不把 360 条发言抹成“大家一致同意”</h3><p>一场约 47 分钟、6 位发言人的需求评审，共产生 360 条发言片段。会议语言天然带着中断、补充、条件与模糊责任；如果只追求流畅摘要，很容易得到一份“所有人都理性、所有问题都有共识”的假纪要。</p><div class="result-grid"><div class="result"><strong>47 分钟</strong><span>需求评审会议时长</span></div><div class="result"><strong>6 位</strong><span>参与发言人</span></div><div class="result"><strong>360 条</strong><span>原始发言片段</span></div><div class="result"><strong>7 条</strong><span>共识与需求变更</span></div><div class="result"><strong>4 条</strong><span>争议与明确结论</span></div><div class="result"><strong>4 条</strong><span>会后待办</span></div></div><h4>不是按发言顺序压缩，而是按决策状态重组</h4><ul><li>已经说清楚的共识和需求变更。</li><li>确实发生过分歧，并在会上得到明确结论的争议与共识。</li><li>仍需补充、评估、测试或确认的会后待办。</li></ul><p>AI 完成逐段提取、重复讨论合并、状态区分、模板填充和整表渲染；正式发出前，人必须确认结论是否真的拍板、责任人是否准确，以及“开发前确认”有没有被误写成“会后马上做”。</p></div></section>
-
-        <section class="detail-section"><div class="detail-label">协作生产线</div><div class="detail-body"><h3>不同任务，可以共享同一套工作方式</h3><p>操作手册与会议纪要的输入不同，但中间过程几乎一致。AI 工作台不是一个孤立聊天框，而是能持续读取 Context、复用真实模板、保留过程版本并检查最终成品的工作环境。</p><div class="article-flow" aria-label="AI 文档协作生产线"><div class="article-flow-step"><span>01</span><strong>业务证据</strong></div><div class="article-flow-step"><span>02</span><strong>结构化底稿</strong></div><div class="article-flow-step"><span>03</span><strong>套用组织模板</strong></div><div class="article-flow-step"><span>04</span><strong>生成正式文档</strong></div><div class="article-flow-step"><span>05</span><strong>结构与版式校验</strong></div><div class="article-flow-step"><span>06</span><strong>人做最终判断</strong></div></div><div class="detail-note"><strong>底线：</strong>如果只有生成，没有证据与校验，AI 只是把“慢慢做错”升级成“很快做错”。</div></div></section>
-
-        <section class="detail-section"><div class="detail-label">人的价值</div><div class="detail-body"><h3>AI 接手之后，人从“写出来”转向“判断对不对”</h3><p>产品经理没有退出流程，而是把注意力集中到更昂贵、也更难被替代的问题上：</p><div class="judgment-grid"><div class="judgment-card"><span>EVIDENCE</span><p>这个结论有没有足够证据？</p></div><div class="judgment-card"><span>RESPONSIBILITY</span><p>角色、状态和责任人是否准确？</p></div><div class="judgment-card"><span>DECISION</span><p>这里已经拍板，还是仍在等待评估？</p></div><div class="judgment-card"><span>USABILITY</span><p>这份文档真的能被使用，还是只像一份正式文档？</p></div></div><p>这正是我对 AI 时代产品经理价值的理解：不是比 AI 写得更快，而是掌握更完整的 Context，对模糊信息保持敏感，并为最后的判断负责。</p></div></section>
-
-        <section class="detail-section"><div class="detail-label">复盘</div><div class="detail-body"><h3>哪些做对了，哪些还需要修正</h3><div class="judgment-grid"><div class="judgment-card"><span>做对的部分</span><p>先沉淀原型、历史手册、模板与业务资料；在信息不完整时保留未知，不替业务自行补答案；让文档经过生成、渲染、检查和追溯，而不是一次性输出。</p></div><div class="judgment-card"><span>需要改进的部分</span><p>操作手册首版偏向覆盖全面，没有第一时间拆分日常查找与培训场景；会议整理也容易把零散讨论润色得过于完整，必须用“已确定、待评估、会后待办”持续约束表达。</p></div></div></div></section>
-
-      </div>
+      <div class="detail-content" aria-live="polite"></div>
     </article>
-
     <article class="detail-page article-detail" data-page="article-ai-iteration">
       <header class="detail-hero">
         <div class="detail-hero-inner">
-          <div class="eyebrow">WRITING · PRODUCT DELIVERY</div>
-          <h2>AI 接进产品迭代后，<br>我重新设计了交付链路</h2>
-          <p class="detail-lead">这不是从空白页创造一个产品，而是让 AI 进入一套已经运行的系统：先理解现状，再拆需求、做 Demo、写 PRD，并把每轮评审继续带进下一版。</p>
-          <div class="detail-meta"><div><span>SCENE</span><strong>存量系统迭代</strong></div><div><span>INPUT</span><strong>页面截图 / 零散需求</strong></div><div><span>OUTPUT</span><strong>Demo / PRD / 需求记录</strong></div><div><span>PRINCIPLE</span><strong>证据优先，变更可追溯</strong></div></div>
+          <div class="eyebrow">ORIGINAL WRITING · 02</div>
+          <h2>AI工作台实战之“把AI接进产品迭代”</h2>
         </div>
       </header>
-      <div class="detail-content">
-        <section class="detail-section"><div class="detail-label">起点</div><div class="detail-body"><div class="article-lead-quote">从 1 往 10 做，第一件事不是画新页面，而是尽量保住系统原本的那个 1。<small>UNDERSTAND BEFORE REDESIGN</small></div><p>现有系统已经有菜单、字段、交互习惯与历史规则，而我拿到的只是本轮涉及的页面截图和几条需求。截图可以说明用户眼前看得见什么，却不能证明背后的数据模型、权限与接口。因此我把它当作局部证据：能确认的按现状还原，不能确认的进入待办，而不是用想象补齐。</p></div></section>
-
-        <section class="detail-section"><div class="detail-label">交付链路</div><div class="detail-body"><h3>让需求、页面和文档沿着同一条线变化</h3><div class="article-flow" aria-label="AI 参与的产品迭代流程"><div class="article-flow-step"><span>01</span><strong>截图补齐现状</strong></div><div class="article-flow-step"><span>02</span><strong>需求独立入池</strong></div><div class="article-flow-step"><span>03</span><strong>拆规则与边界</strong></div><div class="article-flow-step"><span>04</span><strong>可点击 Demo</strong></div><div class="article-flow-step"><span>05</span><strong>评审变更同步</strong></div><div class="article-flow-step"><span>06</span><strong>沉淀 PRD 与 Context</strong></div></div><p>AI 负责资料检索、结构整理、页面实现、版本核对和格式检查；我负责识别真正的问题、确认业务主体、划定边界，并对最终方案负责。这样一来，我不是从空白页开始写文档，而是从可验证的证据和待判断的问题开始工作。</p></div></section>
-
-        <section class="detail-section"><div class="detail-label">需求分析</div><div class="detail-body"><h3>不把一句需求扩写成八页，也不把细节留给开发猜</h3><p>最初的四条输入涉及导航与配电箱查询、外部数据同步、故障消息定位和设备所属关系。每条需求分别登记编号、来源、状态与关联产物；目标版本、优先级和负责人没有证据时，就明确保留为待确认。</p><p>一个看似简单的“设备列表增加所属配电箱”，继续往下会遇到：关系由谁维护、是否允许多选、关联失败如何显示、筛选与导出是否共用数据，以及历史记录应该展示当前名称还是发生时快照。这些问题如果不在分析阶段说清，原型再漂亮，研发和测试仍然没有共同边界。</p><div class="detail-note"><strong>我坚持的做法：</strong>稳定产品事实进入 Context，正在评审的方案留在 Workspace，证据不足的问题进入 Drafts。不同状态的信息不互相冒充。</div></div></section>
-
-        <section class="detail-section"><div class="detail-label">原型评审</div><div class="detail-body"><h3>可点击原型最有价值的地方，是尽早暴露分歧</h3><p>页面一旦可以点击，文字里隐藏的问题会迅速出现：标题是否多余、筛选区是否过宽、树节点能否展开、分页是否完整、导出规则是否一致。每次反馈都直接作用于同一个 Demo 基线，同时回写需求和验收项。</p><ul><li>原型负责把抽象规则变成可讨论的状态与动作。</li><li>评审意见必须传播到页面、PRD、需求记录和验收标准。</li><li>正式 PRD 只保留相对开发基线的有效净增量，不记录每个被放弃的临时想法。</li><li>通用规则继续沉淀，例如列表筛选即时生效、清空条件立即恢复结果。</li></ul></div></section>
-
-        <section class="detail-section"><div class="detail-label">复盘</div><div class="detail-body"><h3>AI 减少的，不只是写文档的时间</h3><div class="judgment-grid"><div class="judgment-card"><span>AI 接走</span><p>页面还原、资料整理、结构拆解、文档同步、版本核对与基础校验。</p></div><div class="judgment-card"><span>我来判断</span><p>问题是否真实、规则是否成立、冲突如何取舍、结果能否在业务里落地。</p></div><div class="judgment-card"><span>系统留下</span><p>经确认的页面、字段、交互与产品边界，成为下一轮迭代可复用的起点。</p></div><div class="judgment-card"><span>仍需警惕</span><p>截图不是完整 Context，生成速度也不能替代证据和责任。</p></div></div></div></section>
-      </div>
+      <div class="detail-content" aria-live="polite"></div>
     </article>
-
     <article class="detail-page article-detail" data-page="article-context-memory">
       <header class="detail-hero">
         <div class="detail-hero-inner">
-          <div class="eyebrow">WRITING · CONTEXT ENGINEERING</div>
-          <h2>给工作台建立一套<br>可维护的记忆系统</h2>
-          <p class="detail-lead">代码、需求和历史资料搬进同一个工作台之后，真正的问题才出现：资料很多，但 AI 不知道哪些可以相信、哪些正在变化、哪些还没有确认。</p>
-          <div class="detail-meta"><div><span>OBJECT</span><strong>CRM 产品工作台</strong></div><div><span>MODEL</span><strong>Context / Workspace / Drafts</strong></div><div><span>GOAL</span><strong>准确、可追溯、可维护</strong></div><div><span>VALUE</span><strong>降低重复解释成本</strong></div></div>
+          <div class="eyebrow">ORIGINAL WRITING · 03</div>
+          <h2>把 CRM 搬进来以后，我又给工作台装了一套“记忆系统”</h2>
         </div>
       </header>
-      <div class="detail-content">
-        <section class="detail-section"><div class="detail-label">问题</div><div class="detail-body"><div class="article-lead-quote">“已经存在”与“已经确认”是两回事。<small>MORE FILES DO NOT MEAN BETTER CONTEXT</small></div><p>一份旧 PRD、一次会议截图和一个写得完整的产品设想都已经存在，但它们可能分别对应过期方案、未拍板讨论和未经验证的假设。如果全部放进知识库，AI 得到的不是完整背景，而是一套混有旧答案与草稿的参考资料。</p><p>因此，我先定义信息的身份，再决定文件放在哪里。目录只是外壳，可信度和生命周期才是这套系统的核心。</p></div></section>
-
-        <section class="detail-section"><div class="detail-label">三层结构</div><div class="detail-body"><h3>事实、变化与候场信息分别安放</h3><div class="judgment-grid"><div class="judgment-card"><span>01 · CONTEXT</span><p>已经确认、可以长期复用的产品定位、术语、主流程、技术基线和交付规则。只收稳定结论，不收整份历史过程。</p></div><div class="judgment-card"><span>02 · WORKSPACE</span><p>当前需求、分析、PRD、规格和下一步。允许变化，也允许暂时不一致，但必须把差异暴露出来。</p></div><div class="judgment-card"><span>03 · DRAFTS</span><p>原始截图、外部资料、会议随记、设想和待确认问题。它不是垃圾桶，而是事实进入正式系统前的缓冲区。</p></div><div class="judgment-card"><span>04 · INDEX</span><p>每层都有清晰索引，告诉 AI 这里负责什么、哪些内容能作为事实，以及应该去哪里寻找证据。</p></div></div></div></section>
-
-        <section class="detail-section"><div class="detail-label">信息流</div><div class="detail-body"><h3>文件没有简单地移动，变化的是信息可信度</h3><div class="article-flow" aria-label="知识从材料到事实的流转"><div class="article-flow-step"><span>01</span><strong>原始材料</strong></div><div class="article-flow-step"><span>02</span><strong>待确认问题</strong></div><div class="article-flow-step"><span>03</span><strong>当前需求</strong></div><div class="article-flow-step"><span>04</span><strong>PRD 与实现</strong></div><div class="article-flow-step"><span>05</span><strong>验收与发布</strong></div><div class="article-flow-step"><span>06</span><strong>稳定知识</strong></div></div><p>原始材料先进入候场区；经过沟通和登记后，成为正在推进的工作；完成开发、验收与发布后，真正稳定下来的能力与规则才被提炼回知识层。这里强调“提炼”，因为整份复制只会制造更多版本。</p><div class="detail-note"><strong>同样重要：</strong>Context 不是只进不出。代码、规则或定位变化时，旧知识必须更新或淘汰，否则知识越多，可信度反而越低。</div></div></section>
-
-        <section class="detail-section"><div class="detail-label">路由</div><div class="detail-body"><h3>让 AI 知道不同问题该去哪里找答案</h3><ul><li>询问稳定规则时，优先读取已确认的产品知识。</li><li>询问正在推进的事项时，进入当前工作区查看状态与差异。</li><li>询问尚未想清楚的问题时，再查看原始材料与待确认清单。</li><li>出现冲突时，回到代码、验收记录或明确的责任来源核对，而不是让最新文件名自动获胜。</li></ul><p>这套路由避免了每次任务都把整个仓库塞给 AI。更重要的是，它把产品经理脑中的背景、判断边界和信息可信度，逐渐变成可以维护的工作系统。</p></div></section>
-
-        <section class="detail-section"><div class="detail-label">我的判断</div><div class="detail-body"><h3>模型会变，好的 Context 不应该跟着清零</h3><p>一次生成得很快并不构成长期能力。真正有价值的是：下一次处理类似问题时，工作台已经知道产品做到哪里、什么可以相信、哪些分歧仍未解决。高质量 Context 让 AI 的效率建立在真实业务之上，也让人的判断有记录、有来源、有回路。</p></div></section>
-      </div>
+      <div class="detail-content" aria-live="polite"></div>
     </article>
-
     <article class="detail-page article-detail" data-page="article-agent-migration">
       <header class="detail-hero">
         <div class="detail-hero-inner">
-          <div class="eyebrow">WRITING · PM AGENT</div>
-          <h2>迁移一套 PM Agent，<br>真正难的是适配</h2>
-          <p class="detail-lead">把一套为另一种编码助手准备的产品经理工作流迁入 Codex，复制文件只是起点。只有工具规则、技能边界、业务背景和交付流程全部对齐，它才会真正工作。</p>
-          <div class="detail-meta"><div><span>FROM</span><strong>既有 PM Workspace</strong></div><div><span>TO</span><strong>Codex 工作台</strong></div><div><span>SCOPE</span><strong>工具 / 技能 / 业务 / 流程</strong></div><div><span>RESULT</span><strong>从文档生成到完整交付</strong></div></div>
+          <div class="eyebrow">ORIGINAL WRITING · 04</div>
+          <h2>我把一个 Claude Code 的 PM Agent 搬进 Codex，结果发现复制文件只是第一步</h2>
         </div>
       </header>
-      <div class="detail-content">
-        <section class="detail-section"><div class="detail-label">前提</div><div class="detail-body"><div class="article-lead-quote">文件能被读取，不等于 Agent 知道何时读取、如何调用，更不等于它理解业务。<small>COPYING IS NOT MIGRATION</small></div><p>最初的材料已经有需求池、需求分析、PRD 和 PC Demo 等技能，看起来似乎只要换个目录就能使用。但工作台入口、技能发现机制、显式调用方式和界面配置并不相同；更关键的是，原工作流携带了别人的行业语境。</p><p>因为迁移前没有完整保留原始基线，我也无法做一份逐行对照。这次经历让我补上一条规则：任何工作台迁移，先固定原始版本，再开始适配。</p></div></section>
-
-        <section class="detail-section"><div class="detail-label">四层适配</div><div class="detail-body"><h3>不是改文件名，而是重建一套可执行关系</h3><div class="judgment-grid"><div class="judgment-card"><span>TOOL</span><p>将项目入口、技能目录、调用方式与界面元数据调整为目标环境能识别的结构。</p></div><div class="judgment-card"><span>SKILL</span><p>保留通用方法，重写触发条件、平台字段和执行边界，避免多个技能同时抢同一项工作。</p></div><div class="judgment-card"><span>BUSINESS</span><p>把借来的供应链语境替换为真实 CRM 的角色、对象、流程与当前能力。</p></div><div class="judgment-card"><span>DELIVERY</span><p>把需求、PRD 和 Demo 继续接到正式开发、测试、发布与版本记录。</p></div></div></div></section>
-
-        <section class="detail-section"><div class="detail-label">工具层</div><div class="detail-body"><h3>让工作台知道规则在哪里、技能怎样被调用</h3><ul><li>项目说明从原平台入口迁移到 Codex 能分层读取的 <code>AGENTS.md</code>。</li><li>项目技能进入目标平台的扫描目录，确保它们不只是普通 Markdown 文件。</li><li>显式调用方式与技能描述同步修改，减少自动路由时的职责冲突。</li><li>补充界面名称、描述和默认提示等配置，让技能在工具列表中可理解、可调用。</li></ul><p>平台无关的方法可以继续复用，例如需求分析区分事实、推断与待确认项，PRD 写清验收标准，Demo 只负责确认界面与交互。需要重写的是平台相关的发现、权限、参数与运行方式。</p></div></section>
-
-        <section class="detail-section"><div class="detail-label">业务层</div><div class="detail-body"><h3>格式全对、业务全偏，是最危险的错误</h3><p>原来的技能理解订单、渠道商和供应链文档，而目标系统包含登录、员工、角色、部门、展会扫码、线索、跟进、项目报备、商机和客户。两套系统可能都使用“报备”一词，但对象、状态、角色和审批边界完全不同。</p><p>我重新核对真实 CRM 已经具备和尚未具备的能力，统一需求池与 PRD 的目录入口，并用唯一需求编号贯穿分析、Demo、开发、测试和发布。这样做的目的不是目录整齐，而是防止 Agent 在相似路径里重新创造一套事实。</p></div></section>
-
-        <section class="detail-section"><div class="detail-label">交付层</div><div class="detail-body"><h3>从“能做原型”走到“能交付产品”</h3><div class="article-flow" aria-label="产品需求到发布的完整交付流程"><div class="article-flow-step"><span>01</span><strong>需求入池</strong></div><div class="article-flow-step"><span>02</span><strong>需求分析</strong></div><div class="article-flow-step"><span>03</span><strong>PRD</strong></div><div class="article-flow-step"><span>04</span><strong>交互 Demo</strong></div><div class="article-flow-step"><span>05</span><strong>全栈实现与测试</strong></div><div class="article-flow-step"><span>06</span><strong>发布与回滚记录</strong></div></div><p>前端按钮能点，不代表接口、数据、权限与审计已经存在。迁移之后，我继续补齐正式实现与发布能力，并建立清晰的版本记录：每个独立修改先验证，只提交相关文件，敏感数据与备份不进入仓库。</p></div></section>
-
-        <section class="detail-section"><div class="detail-label">复盘</div><div class="detail-body"><h3>工作台迁移，本质上是在翻译一家公司</h3><p>文件名像招牌，技能像岗位说明，业务现状是共同常识，版本和校验规则则是管理制度。只翻译招牌，里面的人仍会按照旧规则做事。迁移真正完成的标志，是一条真实需求能够被正确理解，并沿着新的流程走到可验证的结果。</p></div></section>
-      </div>
+      <div class="detail-content" aria-live="polite"></div>
     </article>
-
     <article class="detail-page article-detail" data-page="article-ai-qa-discovery">
       <header class="detail-hero">
         <div class="detail-hero-inner">
-          <div class="eyebrow">WRITING · AI PRODUCT DISCOVERY</div>
-          <h2>第一个企业 AI 项目，<br>我怎样选择切入场景</h2>
-          <p class="detail-lead">从 CRM 里的真实业务出发，我没有直接选择“看起来更智能”的自动配单，而是先验证高频、重要、数据已经准备好的知识查询场景。</p>
-          <div class="detail-meta"><div><span>PROJECT</span><strong>企业知识问答</strong></div><div><span>USERS</span><strong>客户 / 销售 / 售前 / 客服</strong></div><div><span>STACK</span><strong>知识库 / MCP / 工作流</strong></div><div><span>STAGE</span><strong>需求分析与产品设计</strong></div></div>
+          <div class="eyebrow">ORIGINAL WRITING · 05</div>
+          <h2>从0到1搭建AI知识问答复盘（1）</h2>
         </div>
       </header>
-      <div class="detail-content">
-        <section class="detail-section"><div class="detail-label">场景选择</div><div class="detail-body"><div class="article-lead-quote">AI 项目的第一道题，不是“能不能做”，而是“这个问题是否值得现在用 AI 做”。<small>FREQUENT · IMPORTANT · READY</small></div><p>管理层更关注智能配单与方案推荐，但这条链路当时首先需要完成基础线上化，也缺少足够的数据沉淀。痛点很强，却不适合作为第一个 AI 切口。</p><p>资料查询已经运行多年，公司产品、方案、培训与售后文档都有积累；客户和一线团队仍然经常找不到资料，具体操作与调试问题又持续占用客服时间。它同时满足高频、重要和数据可用，因此成为更合适的 MVP。</p></div></section>
-
-        <section class="detail-section"><div class="detail-label">用户问题</div><div class="detail-body"><h3>用户要的常常不是一份文档，而是文档里的答案</h3><ul><li>资料入口分散、层级较深，关键词模糊搜索难以定位目标文件。</li><li>面对调试和使用问题，用户需要先翻说明书，再决定是否咨询客服。</li><li>客服团队反复处理大量相似问题，等待时间与服务成本都在累积。</li></ul><p>MVP 将范围收紧到使用频率最高的产品说明书、用户手册和实时产品信息，先验证三类输入：价格查询、文档查找与产品知识问答。</p></div></section>
-
-        <section class="detail-section"><div class="detail-label">测试集</div><div class="detail-body"><h3>没有现成运营团队，就在试用中长出第一版黄金测试集</h3><p>我邀请销售、售前、售中、售后、产品和文档等角色参与试用，让问题来自真实工作，而不是由产品经理在会议室里想象。测试集同时记录用户问法、期望答案、实际结果和问题归因。</p><div class="result-grid"><div class="result"><strong>60%</strong><span>高频基础题，确保基本能力稳定</span></div><div class="result"><strong>30%</strong><span>复杂易错题，持续吸收历史 Badcase</span></div><div class="result"><strong>10%</strong><span>红线拦截题，验证系统知道何时不回答</span></div></div><p>这套比例不是为了让测试集看起来完整，而是同时覆盖日常价值、边界能力和风险底线。</p></div></section>
-
-        <section class="detail-section"><div class="detail-label">数据设计</div><div class="detail-body"><h3>稳定知识与实时数据，不应该被塞进同一种容器</h3><div class="judgment-grid"><div class="judgment-card"><span>KNOWLEDGE BASE</span><p>承载产品说明书和用户手册。文档只有在 CRM 中处于已发布状态，才进入可检索范围。</p></div><div class="judgment-card"><span>MCP / API</span><p>查询价格与产品状态。实时调用 CRM，只返回已上架产品和当前有效的个性化价格。</p></div><div class="judgment-card"><span>DATA OWNER</span><p>文档由文档团队维护，产品状态由产品经理维护，业务系统仍是事实来源。</p></div><div class="judgment-card"><span>BOUNDARY</span><p>下架、停产、未授权或资料不存在的内容必须被拦截，不能让模型自行补全。</p></div></div></div></section>
-
-        <section class="detail-section"><div class="detail-label">验收标准</div><div class="detail-body"><h3>首版宁可少回答，也要先守住“答得对”</h3><p>我重点使用准确率和召回率判断检索质量：前者关心返回内容有多准，后者关心应该找到的内容有没有漏。提高阈值往往会提升准确率、降低召回率；放宽条件则可能带回更多噪声。</p><p>MVP 阶段优先建立信任，因此先保证准确率，再通过补数据和优化策略逐步提高覆盖面。指标之外，还必须定义低置信度、无匹配、数据冲突、内容过期、超时、高风险操作和多轮对话迷失等异常。</p><div class="detail-note"><strong>产品边界：</strong>连续多轮仍未解决时提供人工入口；用户明确要求人工时立即转接。AI 的价值不在于坚持回答所有问题，而在于知道自己的能力边界。</div></div></section>
-      </div>
+      <div class="detail-content" aria-live="polite"></div>
     </article>
-
     <article class="detail-page article-detail" data-page="article-ai-qa-delivery">
       <header class="detail-hero">
         <div class="detail-hero-inner">
-          <div class="eyebrow">WRITING · AI PRODUCT DELIVERY</div>
-          <h2>AI 知识问答上线前后，<br>产品经理具体做什么</h2>
-          <p class="detail-lead">进入开发与测试以后，AI 产品经理不只是澄清需求，还要沿着数据流拆 Badcase、定位节点、推动工程化修复，并为灰度上线与持续运营建立回路。</p>
-          <div class="detail-meta"><div><span>STAGE</span><strong>开发 / 测试 / 上线 / 迭代</strong></div><div><span>METHOD</span><strong>Badcase 驱动</strong></div><div><span>PLATFORM</span><strong>本地知识库与工作流</strong></div><div><span>ROLE</span><strong>诊断 / 标注 / 决策</strong></div></div>
+          <div class="eyebrow">ORIGINAL WRITING · 06</div>
+          <h2>从0到1搭建AI知识问答复盘（2）</h2>
         </div>
       </header>
-      <div class="detail-content">
-        <section class="detail-section"><div class="detail-label">调试循环</div><div class="detail-body"><div class="article-lead-quote">Badcase 不是一条“回答不好”的反馈，而是一条需要沿数据流逐层定位的故障记录。<small>INPUT → TRACE → DIAGNOSE → FIX</small></div><div class="article-flow" aria-label="Badcase 调优循环"><div class="article-flow-step"><span>01</span><strong>记录预期与实际</strong></div><div class="article-flow-step"><span>02</span><strong>逐节点排查</strong></div><div class="article-flow-step"><span>03</span><strong>定位原因</strong></div><div class="article-flow-step"><span>04</span><strong>工程化修复</strong></div><div class="article-flow-step"><span>05</span><strong>回归测试</strong></div><div class="article-flow-step"><span>06</span><strong>进入测试集</strong></div></div><p>只有同时保留预期输出和实际输出，后面的分析才有依据。我从上游开始检查关键词、分类器、知识库检索、参数封装、实时查询、模板、模型生成和最终展示，确认每个节点拿到了什么，又交出了什么。</p></div></section>
-
-        <section class="detail-section"><div class="detail-label">节点诊断</div><div class="detail-body"><h3>先看输入是否正确，再判断当前节点是否出错</h3><p>一个节点输入为空，可能是变量配置错误，也可能是上游没有产生正确字段；输入正确但输出错误，才继续检查代码、模板或提示语。对于实时产品查询，还要核对结构化字段是否完整，例如产品名称、ERP 编号与权限令牌是否按接口要求传递。</p><p>我会把一次运行的输入、输出、数据处理和相关代码交给 AI 辅助定位，再回到工作流中修改并重新执行。AI 可以加快排查，但变量命名、业务含义和最终正确性仍由我核对。</p></div></section>
-
-        <section class="detail-section"><div class="detail-label">工程约束</div><div class="detail-body"><h3>不要只劝模型守规矩，要让它没有越界的条件</h3><div class="judgment-grid"><div class="judgment-card"><span>L1 · EMPTY GUARD</span><p>查询结果为空时直接分流，不让空数据继续进入生成节点。</p></div><div class="judgment-card"><span>L2 · SOURCE RULE</span><p>明确可引用的唯一资料范围，并要求对无法确认的内容诚实拒答。</p></div><div class="judgment-card"><span>L3 · FORMAT LOCK</span><p>用模板和代码固定关键输出，不把字段、清单和交易信息交给模型自由发挥。</p></div><div class="judgment-card"><span>L4 · REGRESSION</span><p>修复后的问题进入黄金测试集，避免下一次优化重新引入同类错误。</p></div></div><p>提示词可以改善倾向，却很难提供百分之百的保证。涉及业务正确性时，应优先用数据、分支、权限和模板建立硬边界。</p></div></section>
-
-        <section class="detail-section"><div class="detail-label">灰度上线</div><div class="detail-body"><h3>上线会同时放大价值与问题</h3><ul><li>发布前用黄金测试集复验准确率与关键红线，确认达到既定标准。</li><li>首版先面向参与试用、愿意反馈且容错度较高的种子用户。</li><li>培训时说明提问方式、能力边界、人工复核责任与转人工路径。</li><li>同步关注调用成本、数据授权和隐私边界，避免把 AI 变成无约束的聊天入口。</li></ul><p>真实的好案例可以用于推广，也可以帮助用户学会“具体对象 + 明确意图 + 期望格式”的提问方法。这既提高单次交互质量，也能降低长期服务成本。</p></div></section>
-
-        <section class="detail-section"><div class="detail-label">持续迭代</div><div class="detail-body"><h3>上线不是结束，而是更大规模的真实输入开始出现</h3><p>上线后持续跟踪采纳率、解决率、平均对话轮次、响应时间和用户满意度；指标体系尚未完备时，也可以先用问题清单承接反馈。新的 Badcase 按影响范围和风险排序，进入下一轮数据、检索、流程或界面优化。</p><div class="detail-note"><strong>这段经历带给我的变化：</strong>我开始真正理解 AI 产品的工作不是“加一个模型”，而是建立输入、数据、评估、兜底和反馈的完整系统。产品经理必须愿意进入细节，亲手碰到那些不稳定与不确定。</div></div></section>
-      </div>
+      <div class="detail-content" aria-live="polite"></div>
     </article>
-
     <article class="detail-page article-detail" data-page="article-travel-skill">
       <header class="detail-hero">
         <div class="detail-hero-inner">
-          <div class="eyebrow">WRITING · PERSONAL TOOL</div>
-          <h2>我把旅行攻略拆成一个<br>可交互的 Skill</h2>
-          <p class="detail-lead">在临时决定出发、时间非常紧的情况下，我没有让 AI 一次性生成完整攻略，而是把自己的决策过程写成一套可以反复调用、边用边改的工作方法。</p>
-          <div class="detail-meta"><div><span>SCENE</span><strong>两天一夜旅行</strong></div><div><span>BUILD</span><strong>约 3 小时</strong></div><div><span>FORM</span><strong>交互式 Skill</strong></div><div><span>RESULT</span><strong>攻略 / 待办 / PDF</strong></div></div>
+          <div class="eyebrow">ORIGINAL WRITING · 07</div>
+          <h2>放假前我用Kimi Claw写了一个skill做旅行攻略</h2>
         </div>
       </header>
-      <div class="detail-content">
-        <section class="detail-section"><div class="detail-label">问题</div><div class="detail-body"><div class="article-lead-quote">我不需要 AI 替我决定去哪里。我需要它把黑盒打开，让我看见选项、依据与代价。<small>ASSIST THE DECISION · DO NOT REPLACE IT</small></div><p>很多旅行助手会根据一句需求直接给出完整行程，但真正花时间的部分并没有消失：这些景点是否符合偏好、酒店是否方便、节假日会不会拥挤、推荐来自哪里、路线为什么这样排。结果很完整，决策过程却仍然不可见。</p><p>我更希望 AI 负责搜集、归纳和提醒，把最终选择留给我。于是我从自己的旅行习惯出发，先拆问题，再写 Skill。</p></div></section>
-
-        <section class="detail-section"><div class="detail-label">决策链路</div><div class="detail-body"><h3>从“不知道去哪”到“知道下一步做什么”</h3><div class="article-flow" aria-label="旅行规划决策链"><div class="article-flow-step"><span>01</span><strong>理解时间与偏好</strong></div><div class="article-flow-step"><span>02</span><strong>给出目的地选项</strong></div><div class="article-flow-step"><span>03</span><strong>浏览并自主选择</strong></div><div class="article-flow-step"><span>04</span><strong>搜集景点酒店美食</strong></div><div class="article-flow-step"><span>05</span><strong>串联与优化路线</strong></div><div class="article-flow-step"><span>06</span><strong>生成待办与注意事项</strong></div></div><p>每一步完成后再进入下一步。AI 先给可比较的选项和来源，我确认选择；之后再根据起床时间、交通方式、对美食与景点的优先级，调整路线并指出冲突。</p></div></section>
-
-        <section class="detail-section"><div class="detail-label">产品设计</div><div class="detail-body"><h3>让攻略的“过程”成为产品，而不只交付一份结果</h3><ul><li>目的地推荐：收集出发时间、天数、自然或人文偏好与距离范围，给出候选排序及理由。</li><li>选项比较：从多平台汇总景点、美食和酒店信息，保留来源，方便继续判断。</li><li>路线优化：结合距离、人流、停车与营业时间，指出不合理安排并建议删改。</li><li>任务管理：整理酒店、交通、门票和装备清单，避免攻略写完却没有真正执行。</li><li>现场提示：补充停车、交通、拥挤程度、必点菜和避坑信息。</li></ul></div></section>
-
-        <section class="detail-section"><div class="detail-label">边做边改</div><div class="detail-body"><h3>Skill 像一个可以训练的新同事</h3><p>我把痛点和目标交给 AI 生成第一版流程，再直接用它完成真实旅行规划。只要问题顺序、推荐方式或输出格式不符合预期，就回到 Skill 修改规则，并立刻用新版本继续当前任务。</p><p>这个过程把一次性的对话偏好沉淀成可复用 SOP。约三小时后，我得到了一套包含七个核心步骤的 Skill，也完成了两天一夜的行程、待办清单和便于携带的 PDF。</p><div class="detail-note"><strong>仍未解决：</strong>没有接入酒店与票务平台的实时接口，因此无法直接确认当日库存与价格。这个缺口应该被明确标注，而不是用看起来合理的推荐掩盖。</div></div></section>
-
-        <section class="detail-section"><div class="detail-label">我的判断</div><div class="detail-body"><h3>好用的 AI 产品，要给人更多掌控感</h3><p>速度不是唯一目标。对主观性强、信息变化快的任务，AI 更适合扩展视野、整理证据和提示冲突；人则保留偏好、取舍与最终决定。把自己的决策过程写成 Skill，也让我看见了另一种产品实践：从个人痛点开始，先做出可以使用的工具，再让真实使用推动规则成长。</p></div></section>
-      </div>
+      <div class="detail-content" aria-live="polite"></div>
     </article>
-
     <article class="detail-page" data-page="work-ai-crm">
       <header class="detail-hero">
         <div class="detail-hero-inner">
@@ -3228,6 +3142,92 @@
     const articleFilters = Array.from(document.querySelectorAll('[data-article-filter]'));
     const articlePreview = document.querySelector('[data-article-preview]');
     const articleCount = document.querySelector('[data-article-count]');
+
+    function appendOriginalLines(element, value) {
+      value.split('\n').forEach(function (line, index) {
+        if (index > 0) element.appendChild(document.createElement('br'));
+        element.appendChild(document.createTextNode(line));
+      });
+    }
+
+    function createOriginalArticleBody(article) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'article-original';
+      wrapper.setAttribute('aria-label', article.title + '原文');
+      article.body.split(/\n{2,}/).forEach(function (block) {
+        const trimmed = block.trim();
+        if (!trimmed) return;
+        let element;
+        if (/^\d{2}$/.test(trimmed)) {
+          element = document.createElement('div');
+          element.className = 'article-original-index';
+        } else if (!trimmed.includes('\n') && /^(?:[一二三四五六七八九十]+、|阶段[一二三四五六七八九十]+：|\d+[.、]\s*(?:阶段目标|核心工作)|总结：|写在最后：|这一集，谁做了什么|下期预告)$/.test(trimmed)) {
+          element = document.createElement('h3');
+        } else {
+          element = document.createElement('p');
+        }
+        appendOriginalLines(element, trimmed);
+        wrapper.appendChild(element);
+      });
+      return wrapper;
+    }
+
+    const originalArticleExcerpts = {
+      'article-ai-workbench': 'AI 最该先接走的，不是决策，是那些没价值又躲不开的琐事。',
+      'article-ai-iteration': '目的也很直接，把反复整理、搬运和同步的活交给我，给脏脏多留一点时间做业务判断。',
+      'article-context-memory': '每次开始一个新任务，还是要重新解释产品是什么、现在有哪些模块、需求进行到哪一步、哪些内容已经确认、哪些只是之前随手记下的想法。',
+      'article-agent-migration': '把 Claude Code 的文件复制到 Codex，只完成了“搬家”。门牌号、房间用途、水电线路，统统还没对上。',
+      'article-ai-qa-discovery': '最近准备做一下AI知识问答项目的复盘，这个项目大概搞了两个月，前面也写了一些文章记录自己在执行过程中遇到的问题。',
+      'article-ai-qa-delivery': '回到正题，今天继续复盘，这是【从0搭建AI知识问答复盘】的第二篇文章，主要是包括项目落地的剩余3个阶段——阶段三：开发与测试、阶段四：上线及运营、阶段五：持续性迭代。',
+      'article-travel-skill': '我实在不想和之前一样“从大量的看小红书推荐”开始，所以懒人灵机一动，干脆做个比较符合本人做旅行攻略的skill。'
+    };
+
+    async function loadOriginalArticles() {
+      try {
+        const response = await fetch('./article-originals.json', { cache: 'no-store' });
+        if (!response.ok) throw new Error('Article data request failed: ' + response.status);
+        const payload = await response.json();
+        payload.articles.forEach(function (article) {
+          const excerpt = originalArticleExcerpts[article.id] || article.body.split(/\n{2,}/).find(function (block) { return block.trim(); })?.trim() || '';
+          const page = detailPages.find(function (item) { return item.dataset.page === article.id; });
+          if (page) {
+            const title = page.querySelector('.detail-hero h2');
+            const content = page.querySelector('.detail-content');
+            if (title) title.textContent = article.title;
+            page.querySelector('.detail-lead')?.remove();
+            page.querySelector('.detail-meta')?.remove();
+            if (content) content.replaceChildren(createOriginalArticleBody(article));
+            page.classList.add('original-ready');
+          }
+
+          document.querySelectorAll('[data-detail="' + article.id + '"]').forEach(function (entry) {
+            const title = entry.querySelector('h3');
+            const copy = entry.querySelector('p');
+            if (title) title.textContent = article.title;
+            if (copy) copy.textContent = excerpt;
+            entry.dataset.previewTitle = article.title;
+            entry.dataset.previewCopy = excerpt;
+            entry.setAttribute('aria-label', '阅读文章：' + article.title);
+          });
+        });
+        const activePreview = articleItems.find(function (item) { return item.classList.contains('is-previewing'); }) || articleItems[0];
+        if (activePreview) setArticlePreview(activePreview);
+      } catch (error) {
+        console.error(error);
+        document.querySelectorAll('.article-detail').forEach(function (page) {
+          const content = page.querySelector('.detail-content');
+          if (content) {
+            const message = document.createElement('div');
+            message.className = 'article-original-error';
+            message.textContent = '文章正文暂时未能载入，请刷新页面后重试。';
+            content.replaceChildren(message);
+          }
+          page.classList.add('original-ready');
+        });
+      }
+    }
+
+    loadOriginalArticles();
 
     function setArticlePreview(item) {
       if (!item || !articlePreview) return;
