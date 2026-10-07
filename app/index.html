@@ -1853,16 +1853,40 @@
     .article-detail .detail-hero { position: relative; overflow: hidden; }
     .article-detail .detail-hero::after { content: "THINK / VERIFY / DECIDE"; position: absolute; right: -22px; bottom: 10px; color: rgba(221,185,121,.045); font-size: clamp(48px, 8vw, 104px); font-weight: 800; letter-spacing: -.05em; white-space: nowrap; pointer-events: none; }
     .article-detail .detail-hero-inner { position: relative; z-index: 1; }
-    .article-detail .detail-content { width: min(920px, calc(100vw - 96px)); }
+    .article-detail .detail-hero h2 { max-width: 980px; font-weight: 800; text-wrap: balance; }
+    .article-detail .detail-content { width: min(1040px, calc(100vw - 96px)); }
     .article-detail:not(.original-ready) .detail-lead,
     .article-detail:not(.original-ready) .detail-meta,
     .article-detail:not(.original-ready) .detail-content { visibility: hidden; }
+    .article-hero-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; margin-top: 28px; color: rgba(255,250,241,.48); font-size: 10px; font-weight: 700; letter-spacing: .12em; }
+    .article-hero-meta span,
+    .article-hero-meta time { display: inline-flex; align-items: center; gap: 9px; }
+    .article-hero-meta span::before,
+    .article-hero-meta time::before { content: ""; width: 4px; height: 4px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(200,146,77,.09); }
+    .article-reading-layout { display: grid; grid-template-columns: 170px minmax(0,1fr); gap: 54px; align-items: start; }
+    .article-toc { position: sticky; top: 106px; max-height: calc(100vh - 142px); overflow: auto; padding: 5px 0 18px; scrollbar-width: none; }
+    .article-toc::-webkit-scrollbar { display: none; }
+    .article-toc-label { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; color: var(--gold); font-size: 8px; font-weight: 800; letter-spacing: .2em; }
+    .article-toc-label::before { content: ""; width: 24px; height: 1px; background: var(--gold); }
+    .article-toc ol { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
+    .article-toc a { position: relative; display: block; border-left: 1px solid var(--line-light); padding: 8px 0 8px 15px; color: var(--muted); font-size: 10px; line-height: 1.55; transition: color .22s ease, border-color .22s ease, transform .22s ease; }
+    .article-toc a:hover,
+    .article-toc a:focus-visible,
+    .article-toc a.is-active { border-left-color: var(--gold); color: var(--ink); transform: translateX(3px); }
+    .article-toc a[data-level="4"] { padding-left: 26px; font-size: 9px; }
     .article-original { max-width: 760px; margin: 0 auto; }
-    .article-original::before { content: "ORIGINAL WRITING"; display: block; margin-bottom: 36px; color: var(--gold); font-size: 9px; font-weight: 800; letter-spacing: .2em; }
+    .article-original::before { content: "ORIGINAL WRITING"; display: flex; align-items: center; gap: 12px; margin-bottom: 36px; color: var(--gold); font-size: 9px; font-weight: 800; letter-spacing: .2em; }
     .article-original p { margin: 0 0 24px; color: #514c45; font-size: 15px; line-height: 2; white-space: normal; }
-    .article-original h3 { margin: 58px 0 22px; color: var(--ink); font-family: var(--font-sans); font-size: 25px; font-weight: 700; line-height: 1.5; letter-spacing: -.02em; }
+    .article-original p:first-of-type { margin-bottom: 38px; color: var(--ink); font-size: 18px; font-weight: 650; line-height: 1.85; letter-spacing: -.012em; }
+    .article-original h3 { position: relative; margin: 66px 0 24px; padding: 22px 0 0; border-top: 1px solid rgba(200,146,77,.26); color: var(--ink); font-family: var(--font-sans); font-size: 27px; font-weight: 800; line-height: 1.45; letter-spacing: -.03em; scroll-margin-top: 104px; }
     .article-original h3:first-child { margin-top: 0; }
+    .article-original h3::before { content: "SECTION"; display: block; margin-bottom: 9px; color: var(--gold); font-size: 8px; font-weight: 800; letter-spacing: .2em; }
+    .article-original h4 { margin: 38px 0 16px; color: var(--ink); font-size: 18px; font-weight: 800; line-height: 1.55; letter-spacing: -.018em; scroll-margin-top: 104px; }
     .article-original-index { margin: 58px 0 10px; color: var(--gold); font-family: var(--font-display); font-size: 40px; font-style: italic; line-height: 1; }
+    .article-original-list { border-left: 2px solid rgba(200,146,77,.38); padding: 15px 0 15px 20px; color: #5e574e !important; background: linear-gradient(90deg, rgba(200,146,77,.075), transparent 72%); line-height: 2.15 !important; }
+    .article-original-process { border: 1px solid rgba(200,146,77,.23); border-radius: 13px; padding: 18px 20px; color: var(--ink) !important; background: #eee6da; font-weight: 700; text-align: center; letter-spacing: .015em; }
+    .article-original strong { color: var(--ink); font-weight: 800; }
+    .article-original code { border: 1px solid rgba(200,146,77,.2); border-radius: 5px; padding: .12em .38em; color: #80551f; background: rgba(200,146,77,.08); font-family: Consolas, "SFMono-Regular", monospace; font-size: .88em; }
     .article-original br { content: ""; }
     .article-original br + br { display: none; }
     .article-original-error { border: 1px solid var(--line-light); border-radius: 14px; padding: 24px; color: var(--ink-soft); background: rgba(255,255,255,.42); font-size: 13px; line-height: 1.8; }
@@ -1955,7 +1979,10 @@
     .article-index-card.is-hidden { display: none; }
     .article-index-card > * { position: relative; z-index: 1; }
     .article-index-no { color: var(--gold); font-family: var(--font-display); font-size: 20px; font-style: italic; }
-    .article-index-meta { color: var(--gold); font-size: 8px; font-weight: 800; letter-spacing: .16em; }
+    .article-index-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 7px 13px; color: var(--gold); font-size: 8px; font-weight: 800; letter-spacing: .16em; }
+    .article-index-meta time { color: var(--muted); letter-spacing: .1em; }
+    .thought-card .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 7px 13px; }
+    .thought-card .meta time { color: inherit; opacity: .58; letter-spacing: .1em; }
     .article-index-card h3 { max-width: 600px; margin-top: 10px; font-size: 21px; font-weight: 600; line-height: 1.45; letter-spacing: -.025em; }
     .article-index-card p { max-width: 650px; margin-top: 10px; color: var(--ink-soft); font-size: 11px; line-height: 1.75; }
     .article-index-arrow { width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid var(--line-light); border-radius: 50%; color: var(--gold); transition: transform .25s ease, color .25s ease, background .25s ease; }
@@ -2218,6 +2245,16 @@
       .detail-section { grid-template-columns: 1fr; gap: 15px; }
       .result-grid { grid-template-columns: 1fr; }
       .article-detail .detail-content { width: calc(100vw - 32px); }
+      .article-detail .detail-hero h2 { font-size: 34px; }
+      .article-hero-meta { margin-top: 22px; gap: 9px 16px; font-size: 8px; }
+      .article-reading-layout { display: block; }
+      .article-toc { display: none; }
+      .article-original p { font-size: 14px; line-height: 1.95; }
+      .article-original p:first-of-type { margin-bottom: 32px; font-size: 16px; }
+      .article-original h3 { margin-top: 52px; padding-top: 18px; font-size: 23px; }
+      .article-original h4 { margin-top: 30px; font-size: 17px; }
+      .article-original-list { padding: 13px 0 13px 15px; }
+      .article-original-process { padding: 16px; text-align: left; }
       .article-flow { grid-template-columns: 1fr 1fr; }
       .article-flow-step:not(:last-child)::after { display: none; }
       .judgment-grid { grid-template-columns: 1fr; }
@@ -2987,7 +3024,7 @@
 
           <aside class="article-preview" data-article-preview aria-label="文章预览">
             <div>
-              <div class="article-preview-top"><span>HOVER TO PREVIEW</span><span data-preview-meta>AI WORKBENCH</span></div>
+              <div class="article-preview-top"><span data-preview-date>2026.09.16</span><span data-preview-meta>AI WORKBENCH</span></div>
               <div class="article-preview-index" data-preview-no>01</div>
               <h3 data-preview-title>AI 工作台实战之“让 AI 接手那些躲不开的重复工作”</h3>
               <p data-preview-copy>AI 最该先接走的，不是决策，是那些没价值又躲不开的琐事。</p>
@@ -3150,17 +3187,57 @@
     const articlePreview = document.querySelector('[data-article-preview]');
     const articleCount = document.querySelector('[data-article-count]');
 
+    function appendOriginalInline(element, value) {
+      const tokenPattern = /(\*\*[^*]+\*\*|`[^`\n]+`)/g;
+      let cursor = 0;
+      let match;
+      while ((match = tokenPattern.exec(value))) {
+        if (match.index > cursor) element.appendChild(document.createTextNode(value.slice(cursor, match.index)));
+        const token = match[0];
+        const inline = document.createElement(token.startsWith('**') ? 'strong' : 'code');
+        inline.textContent = token.startsWith('**') ? token.slice(2, -2) : token.slice(1, -1);
+        element.appendChild(inline);
+        cursor = match.index + token.length;
+      }
+      if (cursor < value.length) element.appendChild(document.createTextNode(value.slice(cursor)));
+    }
+
     function appendOriginalLines(element, value) {
       value.split('\n').forEach(function (line, index) {
         if (index > 0) element.appendChild(document.createElement('br'));
-        element.appendChild(document.createTextNode(line));
+        appendOriginalInline(element, line);
       });
     }
 
+    function isPrimaryOriginalHeading(value) {
+      if (value.includes('\n')) return false;
+      return /^(?:[一二三四五六七八九十]+、.+|阶段[一二三四五六七八九十]+：.+|总结：.+|写在最后：.*|这一集，谁做了什么|下期预告)$/.test(value);
+    }
+
+    function isSecondaryOriginalHeading(value) {
+      if (value.includes('\n') || value.length > 48) return false;
+      if (value.length <= 32 && /[:：]$/.test(value)) return true;
+      return /^(?:\d+[.、)]\s*.+|梳理痛点与期望|准备Kimi Claw|让Kimi Claw输出skill初稿|一边做攻略一边优化Skill|给大家浅浅的分享一下：)$/.test(value);
+    }
+
     function createOriginalArticleBody(article) {
+      const layout = document.createElement('div');
+      layout.className = 'article-reading-layout';
+
+      const toc = document.createElement('nav');
+      toc.className = 'article-toc';
+      toc.setAttribute('aria-label', '文章目录');
+      const tocLabel = document.createElement('div');
+      tocLabel.className = 'article-toc-label';
+      tocLabel.textContent = 'CONTENTS';
+      const tocList = document.createElement('ol');
+      toc.append(tocLabel, tocList);
+
       const wrapper = document.createElement('div');
       wrapper.className = 'article-original';
       wrapper.setAttribute('aria-label', article.title + '原文');
+
+      let headingIndex = 0;
       article.body.split(/\n{2,}/).forEach(function (block) {
         const trimmed = block.trim();
         if (!trimmed) return;
@@ -3168,15 +3245,75 @@
         if (/^\d{2}$/.test(trimmed)) {
           element = document.createElement('div');
           element.className = 'article-original-index';
-        } else if (!trimmed.includes('\n') && /^(?:[一二三四五六七八九十]+、|阶段[一二三四五六七八九十]+：|\d+[.、]\s*(?:阶段目标|核心工作)|总结：|写在最后：|这一集，谁做了什么|下期预告)$/.test(trimmed)) {
+        } else if (isPrimaryOriginalHeading(trimmed)) {
           element = document.createElement('h3');
+        } else if (isSecondaryOriginalHeading(trimmed)) {
+          element = document.createElement('h4');
         } else {
           element = document.createElement('p');
+          const lines = trimmed.split('\n').filter(Boolean);
+          if (lines.length && lines.every(function (line) { return /^(?:•|——|—|-\s)/.test(line.trim()); })) element.classList.add('article-original-list');
+          if (!trimmed.includes('\n') && trimmed.includes('→') && trimmed.length <= 150) element.classList.add('article-original-process');
         }
         appendOriginalLines(element, trimmed);
         wrapper.appendChild(element);
+
+        if (element.matches('h3, h4')) {
+          headingIndex += 1;
+          element.id = article.id + '-section-' + headingIndex;
+          const item = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = '#' + element.id;
+          link.dataset.level = element.tagName === 'H3' ? '3' : '4';
+          link.textContent = trimmed;
+          if (headingIndex === 1) link.classList.add('is-active');
+          link.addEventListener('click', function (event) {
+            event.preventDefault();
+            tocList.querySelectorAll('a').forEach(function (node) { node.classList.toggle('is-active', node === link); });
+            element.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+          });
+          item.appendChild(link);
+          tocList.appendChild(item);
+        }
       });
-      return wrapper;
+
+      if (!headingIndex) toc.hidden = true;
+      layout.append(toc, wrapper);
+      return layout;
+    }
+
+    function formatArticleDate(value, includeTime) {
+      if (!value || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(value)) return '';
+      const date = value.slice(0, 10).replace(/-/g, '.');
+      return includeTime ? date + ' · ' + value.slice(11, 16) : date;
+    }
+
+    function createArticleHeroMeta(article) {
+      const meta = document.createElement('div');
+      meta.className = 'article-hero-meta';
+      const published = document.createElement('time');
+      published.dateTime = article.publishedAt;
+      published.textContent = '发布于 ' + formatArticleDate(article.publishedAt, true);
+      const readingTime = document.createElement('span');
+      readingTime.textContent = '约 ' + Math.max(1, Math.ceil(article.body.replace(/\s/g, '').length / 500)) + ' 分钟阅读';
+      const archive = document.createElement('span');
+      archive.textContent = '个人文章归档';
+      meta.append(published, readingTime, archive);
+      return meta;
+    }
+
+    function setupArticleReadingNavigation(page) {
+      const root = document.querySelector('.detail-layer');
+      const headings = Array.from(page.querySelectorAll('.article-original h3, .article-original h4'));
+      const links = Array.from(page.querySelectorAll('.article-toc a'));
+      if (!root || !headings.length || !links.length || page.articleTocObserver) return;
+      const observer = new IntersectionObserver(function (entries) {
+        const activeEntry = entries.filter(function (entry) { return entry.isIntersecting; }).sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; })[0];
+        if (!activeEntry) return;
+        links.forEach(function (link) { link.classList.toggle('is-active', link.hash === '#' + activeEntry.target.id); });
+      }, { root: root, rootMargin: '-96px 0px -68% 0px', threshold: 0 });
+      headings.forEach(function (heading) { observer.observe(heading); });
+      page.articleTocObserver = observer;
     }
 
     const originalArticleExcerpts = {
@@ -3199,21 +3336,36 @@
           const page = detailPages.find(function (item) { return item.dataset.page === article.id; });
           if (page) {
             const title = page.querySelector('.detail-hero h2');
+            const heroInner = page.querySelector('.detail-hero-inner');
             const content = page.querySelector('.detail-content');
             if (title) title.textContent = article.title;
             page.querySelector('.detail-lead')?.remove();
             page.querySelector('.detail-meta')?.remove();
-            if (content) content.replaceChildren(createOriginalArticleBody(article));
+            page.querySelector('.article-hero-meta')?.remove();
+            if (heroInner) heroInner.appendChild(createArticleHeroMeta(article));
+            if (content) {
+              content.replaceChildren(createOriginalArticleBody(article));
+              setupArticleReadingNavigation(page);
+            }
             page.classList.add('original-ready');
           }
 
           document.querySelectorAll('[data-detail="' + article.id + '"]').forEach(function (entry) {
             const title = entry.querySelector('h3');
             const copy = entry.querySelector('p');
+            const meta = entry.querySelector('.article-index-meta, .meta');
             if (title) title.textContent = article.title;
             if (copy) copy.textContent = excerpt;
+            if (meta && article.publishedAt) {
+              meta.querySelector('time')?.remove();
+              const published = document.createElement('time');
+              published.dateTime = article.publishedAt;
+              published.textContent = formatArticleDate(article.publishedAt, false);
+              meta.appendChild(published);
+            }
             entry.dataset.previewTitle = article.title;
             entry.dataset.previewCopy = excerpt;
+            entry.dataset.previewDate = formatArticleDate(article.publishedAt, false);
             entry.setAttribute('aria-label', '阅读文章：' + article.title);
           });
         });
@@ -3242,6 +3394,7 @@
       articlePreview.classList.add('is-changing');
       articlePreview.querySelector('[data-preview-no]').textContent = item.dataset.previewNo;
       articlePreview.querySelector('[data-preview-meta]').textContent = item.dataset.previewMeta;
+      articlePreview.querySelector('[data-preview-date]').textContent = item.dataset.previewDate || '';
       articlePreview.querySelector('[data-preview-title]').textContent = item.dataset.previewTitle;
       articlePreview.querySelector('[data-preview-copy]').textContent = item.dataset.previewCopy;
       window.setTimeout(function () { articlePreview.classList.remove('is-changing'); }, 260);
