@@ -50,8 +50,7 @@
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
-    body.detail-open,
-    body.product-launching { overflow: hidden; }
+    body.detail-open { overflow: hidden; }
     body.section-review .topbar,
     body.section-review main > section:not(.review-target),
     body.section-review footer { display: none; }
@@ -1565,59 +1564,6 @@
     }
     .work-shell:hover .work-visual-label { border-color: rgba(221,185,121,.35); background: rgba(20,18,15,.8); }
 
-    .product-launch {
-      position: fixed;
-      z-index: 120;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      color: #fffdf8;
-      background: #0e0d0b;
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity .36s ease, visibility .36s ease;
-    }
-    .product-launch::before {
-      content: "";
-      position: absolute;
-      inset: -20%;
-      background:
-        linear-gradient(rgba(221,185,121,.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(221,185,121,.045) 1px, transparent 1px),
-        radial-gradient(circle at center, rgba(200,146,77,.14), transparent 34%);
-      background-size: 56px 56px, 56px 56px, auto;
-      transform: perspective(700px) rotateX(62deg) translateY(32%);
-      transform-origin: center;
-    }
-    .product-launch.is-active { opacity: 1; visibility: visible; pointer-events: auto; }
-    .product-launch-content { position: relative; z-index: 2; width: min(560px, calc(100vw - 48px)); text-align: center; }
-    .launch-mark {
-      position: relative;
-      width: 118px;
-      height: 118px;
-      display: grid;
-      place-items: center;
-      margin: 0 auto 32px;
-      border: 1px solid rgba(221,185,121,.45);
-      border-radius: 50%;
-      color: var(--gold-light);
-      font-family: var(--font-display);
-      font-size: 25px;
-      font-style: italic;
-      box-shadow: 0 0 50px rgba(200,146,77,.12);
-    }
-    .launch-mark::before,
-    .launch-mark::after { content: ""; position: absolute; border: 1px solid rgba(221,185,121,.18); border-radius: 50%; }
-    .launch-mark::before { inset: -15px; }
-    .launch-mark::after { inset: -30px; border-style: dashed; animation: orbit 5s linear infinite; }
-    .product-launch h3 { font-size: clamp(30px, 4vw, 48px); line-height: 1.2; letter-spacing: -.035em; }
-    .product-launch p { margin-top: 14px; color: rgba(255,250,241,.5); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; }
-    .launch-progress { width: min(360px, 76vw); height: 1px; margin: 34px auto 0; overflow: hidden; background: rgba(255,255,255,.1); }
-    .launch-progress span { display: block; width: 100%; height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transform: translateX(-101%); }
-    .product-launch.is-running .launch-progress span { transform: translateX(0); transition: transform .8s cubic-bezier(.2,.8,.2,1); }
-
     .thought-intro { max-width: 800px; margin-bottom: 36px; color: var(--ink-soft); font-size: 16px; line-height: 1.9; }
     .thought-grid { display: grid; grid-template-columns: 1.16fr .84fr; gap: 16px; }
     .thought-card {
@@ -2701,7 +2647,7 @@
               <span>使用 AI 协同开发，并执行页面巡检与回归验收</span>
             </div>
             <div class="work-actions">
-              <a class="button primary experience-button" href="/product-login.html" data-experience-link data-magnetic><span class="button-dot"></span>体验产品 <span class="arrow">↗</span></a>
+              <button class="button primary experience-button" type="button" data-detail="work-ai-crm" data-magnetic><span class="button-dot"></span>体验产品 <span class="arrow">↗</span></button>
               <button class="button dark" type="button" data-detail="work-ai-crm" data-magnetic>查看完整作品 <span class="arrow">→</span></button>
             </div>
           </div>
@@ -3212,15 +3158,6 @@
     </article>
   </div>
 
-  <div class="product-launch" aria-hidden="true" data-product-launch>
-    <div class="product-launch-content">
-      <div class="launch-mark">CRM</div>
-      <h3>正在进入产品体验</h3>
-      <p>Connecting context · Opening workspace</p>
-      <div class="launch-progress" aria-hidden="true"><span></span></div>
-    </div>
-  </div>
-
   <div class="toast" role="status" aria-live="polite"></div>
 
   <script>
@@ -3708,19 +3645,10 @@
     });
 
     const workStage = document.querySelector('[data-work-stage]');
-    const productLaunch = document.querySelector('[data-product-launch]');
     const heroStage = document.querySelector('[data-hero-stage]');
     const interactiveTimeline = document.querySelector('[data-timeline]');
     const tiltCards = Array.from(document.querySelectorAll('[data-tilt-card], .ai-agent'));
     const contactStage = document.querySelector('[data-contact-stage]');
-    const launchPreviewRequested = new URLSearchParams(location.search).get('launch') === 'preview';
-
-    if (launchPreviewRequested && productLaunch) {
-      productLaunch.classList.add('is-active', 'is-running');
-      productLaunch.setAttribute('aria-hidden', 'false');
-      body.classList.add('product-launching');
-    }
-
     if (heroStage && finePointer && !reducedMotion.matches) {
       heroStage.addEventListener('pointermove', function (event) {
         const rect = heroStage.getBoundingClientRect();
@@ -3848,34 +3776,6 @@
     window.addEventListener('scroll', requestScrollEffects, { passive: true });
     window.addEventListener('resize', requestScrollEffects);
     requestScrollEffects();
-
-    document.querySelectorAll('[data-experience-link]').forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-        event.preventDefault();
-        const targetUrl = link.href;
-        if (!productLaunch) {
-          window.location.assign(targetUrl);
-          return;
-        }
-        link.style.transform = '';
-        productLaunch.classList.add('is-active');
-        productLaunch.setAttribute('aria-hidden', 'false');
-        body.classList.add('product-launching');
-        requestAnimationFrame(function () {
-          requestAnimationFrame(function () { productLaunch.classList.add('is-running'); });
-        });
-        const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 80 : 900;
-        setTimeout(function () { window.location.assign(targetUrl); }, delay);
-      });
-    });
-
-    window.addEventListener('pageshow', function (event) {
-      if (!productLaunch || !event.persisted || new URLSearchParams(location.search).get('launch') === 'preview') return;
-      productLaunch.classList.remove('is-active', 'is-running');
-      productLaunch.setAttribute('aria-hidden', 'true');
-      body.classList.remove('product-launching');
-    });
 
     const revealObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {

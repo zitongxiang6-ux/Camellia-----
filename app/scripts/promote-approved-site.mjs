@@ -33,7 +33,10 @@ const replacements = [
   ],
   ['href="../01_Context/01_简历/简历-CRM版.pdf"', 'href="/resume-crm.pdf"'],
   ['src="../02_WorkSpace/Web_Core/app/public/project-crm.jpg"', 'src="/project-crm.jpg"'],
-  ['href="http://127.0.0.1:3000/" data-experience-link', 'href="/product-login.html" data-experience-link'],
+  [
+    '<a class="button primary experience-button" href="http://127.0.0.1:3000/" data-experience-link data-magnetic><span class="button-dot"></span>体验产品 <span class="arrow">↗</span></a>',
+    '<button class="button primary experience-button" type="button" data-detail="work-ai-crm" data-magnetic><span class="button-dot"></span>体验产品 <span class="arrow">↗</span></button>',
+  ],
   [
     'href="mailto:18292879652@163.com"',
     'href="mailto:18292879652@163.com?subject=%E6%9D%A5%E8%87%AA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E7%9A%84%E8%81%94%E7%B3%BB&body=%E5%90%91%E7%B4%AB%E5%BD%A4%EF%BC%8C%E4%BD%A0%E5%A5%BD%EF%BC%9A%0D%0A%0D%0A"',
