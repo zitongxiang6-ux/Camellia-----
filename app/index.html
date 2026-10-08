@@ -1583,20 +1583,18 @@
 
     #thinking .section-head { margin-bottom: 28px; }
     .thought-intro {
-      max-width: none;
-      display: grid;
-      grid-template-columns: 170px minmax(0, 820px);
-      gap: 34px;
-      margin: 0 0 34px;
-      border-top: 1px solid var(--line-light);
-      border-bottom: 1px solid var(--line-light);
-      padding: 24px 0;
+      width: min(760px, calc(100% - 184px));
+      margin: 0 0 38px 184px;
+      padding: 19px 0 0;
       color: var(--ink-soft);
       font-size: 14px;
       line-height: 1.9;
+      background: linear-gradient(90deg, rgba(170,112,45,.65), rgba(170,112,45,0)) top left / 64px 1px no-repeat;
     }
     .thought-intro::before {
       content: "EDITOR'S NOTE";
+      display: block;
+      margin-bottom: 11px;
       color: var(--gold);
       font-size: 8px;
       font-weight: 800;
@@ -2228,7 +2226,6 @@
       .work-shell { grid-template-columns: 1fr; }
       .work-visual { min-height: 410px; }
       .work-flow-rail { left: 34px; right: 34px; }
-      .thought-intro { grid-template-columns: 135px minmax(0, 1fr); gap: 26px; }
       .thought-journal { grid-template-columns: 112px minmax(0, 1.12fr) minmax(280px, .88fr); grid-template-rows: minmax(360px, 1fr) 130px; }
       .thought-spine { padding: 28px 20px 24px; }
       .thought-spine-title { font-size: 25px; }
@@ -2381,7 +2378,7 @@
       .work-visual-label { right: 18px; bottom: 18px; left: 18px; max-width: none; }
       .launch-mark { width: 96px; height: 96px; }
       #thinking .section-head { margin-bottom: 22px; }
-      .thought-intro { grid-template-columns: 1fr; gap: 10px; margin-bottom: 24px; padding: 18px 0; font-size: 13px; }
+      .thought-intro { width: auto; max-width: none; margin: 0 0 28px; padding-top: 17px; font-size: 13px; }
       .thought-journal { min-height: 0; display: block; border-radius: 22px; }
       .thought-spine { min-height: 90px; flex-direction: row; align-items: center; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.08); padding: 22px; }
       .thought-spine::before { right: 16px; top: 50%; font-size: 82px; transform: translateY(-50%) rotate(-8deg); }
@@ -2891,7 +2888,7 @@
             <p>做产品，是一边追求完整，一边学会舍弃。时间、资源和现实不会允许每个想法都被保留，但我仍希望留下来的部分有温度，也真正有价值。</p>
           </div>
         </div>
-        <p class="thought-intro reveal">我喜欢复盘，也相信经验只有被沉淀，才不会随着项目结束而消失。像系统里的数据一样，记录、分析、再理解，最后长成下一次判断。这里写下我保留了什么、放弃了什么，以及这些取舍如何让我继续成长。</p>
+        <p class="thought-intro reveal">我喜欢复盘，也相信经验只有被沉淀，才不会随着项目结束而消失。像系统里的数据一样，记录、分析、再理解，最后长成下一次判断。</p>
         <div class="thought-journal reveal">
           <aside class="thought-spine" aria-hidden="true">
             <span class="thought-spine-kicker">PRODUCT<br>FIELD NOTES</span>
