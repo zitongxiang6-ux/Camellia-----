@@ -4436,25 +4436,33 @@
         let dragStartX = 0;
         let dragStartScroll = 0;
         let dragMoved = false;
+        let dragPointerId = null;
         marquee.addEventListener('pointerdown', function (event) {
           if (event.pointerType !== 'mouse' || event.button !== 0) return;
           dragStartX = event.clientX;
           dragStartScroll = marquee.scrollLeft;
           dragMoved = false;
-          marquee.classList.add('is-dragging');
-          marquee.setPointerCapture(event.pointerId);
+          dragPointerId = event.pointerId;
           setSkillMarqueePaused(marquee, true);
         });
         marquee.addEventListener('pointermove', function (event) {
-          if (!marquee.classList.contains('is-dragging')) return;
-          if (Math.abs(event.clientX - dragStartX) > 8) dragMoved = true;
-          marquee.scrollLeft = dragStartScroll - (event.clientX - dragStartX);
+          if (dragPointerId !== event.pointerId) return;
+          const distance = event.clientX - dragStartX;
+          if (!dragMoved && Math.abs(distance) <= 8) return;
+          if (!dragMoved) {
+            dragMoved = true;
+            marquee.classList.add('is-dragging');
+            marquee.setPointerCapture(event.pointerId);
+          }
+          event.preventDefault();
+          marquee.scrollLeft = dragStartScroll - distance;
         });
         function finishSkillDrag(event) {
-          if (!marquee.classList.contains('is-dragging')) return;
+          if (dragPointerId !== event.pointerId) return;
           marquee.classList.remove('is-dragging');
           if (dragMoved) marquee.dataset.suppressClickUntil = String(performance.now() + 360);
           if (marquee.hasPointerCapture(event.pointerId)) marquee.releasePointerCapture(event.pointerId);
+          dragPointerId = null;
           setSkillMarqueePaused(marquee, marquee.matches(':hover') || marquee.contains(document.activeElement));
         }
         marquee.addEventListener('pointerup', finishSkillDrag);
